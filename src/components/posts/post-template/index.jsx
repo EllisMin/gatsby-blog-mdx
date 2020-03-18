@@ -148,7 +148,7 @@ class PostTemplate extends React.Component {
         >
           <ToggleMode />
         </div>
-        <StyledHTML className="post-html" isMobile={isMobile}>
+        <StyledHTML className="post-html">
           {!isAboutPage && (
             <>
               <h1 className="post-title">{post.frontmatter.title}</h1>
@@ -307,16 +307,6 @@ const StyledHTML = styled.div`
   .gatsby-resp-image-wrapper {
     margin: 0.5rem 0;
   }
-
-  /* .anchor-heading.before {
-    position: ${props => (props.isMobile ? "static" : "absolute")};
-    top: ${props => (props.isMobile ? "unset" : "0")};
-    left: ${props => (props.isMobile ? "unset" : "0")};
-    transform: ${props =>
-      props.isMobile ? "translateX(0)" : "translateX(-100%)"};
-    display: ${props => (props.isMobile ? "inline-block" : "initial")};
-    padding-left: ${props => (props.isMobile ? "4px" : "initial")};
-  } */
 
   @media (max-width: 500px) {
     padding: 0.5rem 0.7rem;

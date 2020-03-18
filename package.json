@@ -1,0 +1,67 @@
+{
+  "name": "gatsby-minimalistic-dmin",
+  "author": "Ellis Min <ellismin2@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "description": "A simple starter for blog posts built with Gatsby js",
+  "version": "0.1.0",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "gatsby": "^2.19.45",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-catch-links": "^2.1.26",
+    "gatsby-plugin-google-analytics": "^2.1.36",
+    "gatsby-plugin-manifest": "^2.2.39",
+    "gatsby-plugin-offline": "^3.0.35",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sass": "^2.1.29",
+    "gatsby-plugin-sharp": "^2.4.5",
+    "gatsby-plugin-styled-components": "^3.1.19",
+    "gatsby-remark-autolink-headers": "^2.1.24",
+    "gatsby-remark-copy-linked-files": "^2.1.40",
+    "gatsby-remark-images": "^3.1.44",
+    "gatsby-remark-prismjs": "^3.3.32",
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-remark": "^2.6.53",
+    "gatsby-transformer-sharp": "^2.3.13",
+    "local-storage-fallback": "^4.1.1",
+    "medium-zoom": "^1.0.5",
+    "node-sass": "^4.13.1",
+    "prismjs": "^1.19.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-device-detect": "^1.11.14",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-share": "^4.0.1",
+    "react-switch": "^5.0.1",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "dev": "gatsby develop",
+    "dev mobile": "gatsby develop -H 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

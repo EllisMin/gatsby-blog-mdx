@@ -1,0 +1,346 @@
+$backgroundColor: #2d323e;
+$base0: #fafafa;
+$base1: #fa69e5;
+$base2: #6efa83;
+$base3: #f5ff98;
+$base4: #6ad7f9;
+$base5: #d2ceab;
+$base6: #e48080;
+
+.gatsby-highlight-code-line {
+  background-color: #374666; // Code highlight color
+  display: block;
+  margin-left: -1em;
+  padding-left: 0.75em;
+  border-left: 6px solid #df6b6b;
+}
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+  position: relative;
+  background-color: $backgroundColor;
+  margin: 0.8rem 0;
+  padding: 0.6rem;
+  padding-top: 1.2rem;
+  overflow: auto;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-left: 2px solid #817182;
+
+  // Shows the language badge for code blocks
+  pre[class*="language-"]::before {
+    position: absolute;
+    top: 0;
+    left: 8px;
+    padding: 0.05rem 0.2rem 0.1rem 0.2rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #675151;
+    font-size: 0.6rem;
+    color: #eee;
+  }
+
+  // jsx
+  pre.language-jsx::before {
+    content: "JSX";
+    background: #627eee;
+  }
+
+  // shell
+  pre.language-shell::before {
+    content: "SHELL";
+    background: #7e6260;
+  }
+
+  // bash
+  pre.language-bash::before {
+    content: "BASH";
+  }
+
+  // js
+  pre.language-js::before,
+  pre.language-javascript::before {
+    content: "JS";
+    background: #c7a755;
+  }
+
+  // html
+  pre.language-html::before {
+    content: "HTML";
+    background: #47418c;
+  }
+
+  // css
+  pre.language-css::before {
+    content: "CSS";
+    background: #c6a22d;
+  }
+
+  // graphql
+  pre.language-graphql::before {
+    content: "GRAPHQL";
+    background: #ce624a;
+  }
+
+  // text
+  pre.language-text::before {
+    content: "TEXT";
+  }
+
+  // md
+  pre.language-md::before {
+    content: "MD";
+    background: #68216f;
+  }
+
+  // mdx
+  pre.language-mdx::before {
+    content: "MDX";
+    background: #406544;
+  }
+
+  // json
+  pre.language-json::before {
+    content: "JSON";
+    background: #33963d;
+  }
+
+  // ts
+  pre.language-typescript::before,
+  pre.language-ts::before {
+    content: "TS";
+    background: #8241b0;
+  }
+
+  // tsx
+  pre.language-tsx::before {
+    content: "TSX";
+    background: #8241b0;
+  }
+
+  // yaml
+  pre.language-yaml::before {
+    content: "YAML";
+    background: #5c7d28;
+  }
+
+  // diff
+  pre.language-diff::before {
+    content: "DIFF";
+    background: #802121;
+  }
+
+  // flow
+  pre.language-flow::before {
+    content: "FLOW";
+    background: #5b122b;
+  }
+
+  // swift
+  pre.language-swift::before {
+    content: "SWIFT";
+    background: #cb782f;
+  }
+
+  // java
+  pre.language-java::before {
+    content: "JAVA";
+    background: #509750;
+  }
+
+  // sql
+  pre.language-sql::before {
+    content: "SQL";
+    background: #61b2c1;
+  }
+
+  // r
+  pre.language-r::before {
+    content: "R";
+    background: #b34a4a;
+  }
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+}
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.5rem;
+}
+
+// Custom shell prompt
+.command-line-prompt > span:before {
+  color: #999;
+  content: " ";
+  display: block;
+  padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user="root"]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: $base0;
+  font-size: 0.8rem;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+
+  line-height: 1.5;
+
+  tab-size: 2;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  background: #073642;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  background: #073642;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  /* Inline code background */
+  background-color: $backgroundColor;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1rem;
+  border-radius: 2px;
+  background: #555c6f;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #656565;
+}
+
+.token.punctuation {
+  color: $base5;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.tag,
+.token.boolean,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: $base6;
+}
+
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted,
+.token.number,
+.token.attr-value {
+  color: $base2;
+}
+
+.token.attr-name {
+  color: $base3;
+}
+
+.token.class-name {
+  color: $base0;
+}
+
+.token.entity {
+  color: #657b83;
+  background: #d3aa23;
+}
+
+.token.atrule,
+.token.keyword {
+  color: $base1;
+}
+
+.token.function {
+  color: $base4;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #2e94d3;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+@media (max-width: 500px) {
+  // Decrease font size
+  code[class*="language-"],
+  pre[class*="language-"] {
+    font-size: 0.6rem;
+    .token {
+      font-size: 0.6rem;
+    }
+  }
+
+  // Decrease border width for highlighted code lines
+  .gatsby-highlight-code-line {
+    border-left-width: 2px;
+  }
+}

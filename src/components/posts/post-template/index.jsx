@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import mediumZoom from "medium-zoom"
 import storage from "local-storage-fallback"
+import { isMobile } from "react-device-detect"
 import Layout from "../../layout"
 import Hr from "../../hr"
 import Profile from "../../profile"
@@ -35,8 +36,10 @@ class PostTemplate extends React.Component {
   }
   componentDidMount() {
     this.registerFacebookComments()
-
     this.setState({ location: window.location.href })
+    if (isMobile) {
+      this.moveAnchorHeadings()
+    }
     this.zoomImages()
   }
 
@@ -108,6 +111,21 @@ class PostTemplate extends React.Component {
     })
   }
 
+  // Move anchor headings to the right side on mobile
+  moveAnchorHeadings = () => {
+    const target = ".anchor-heading"
+    const anchors = Array.from(document.querySelectorAll(target))
+    // console.log(anchors)
+
+    anchors.forEach(anchor => {
+      // anchor.parentElement.appendChild(anchor)
+      // anchor.parentElement.removeChild(anchor)
+      anchor.parentNode.appendChild(anchor)
+      anchor.classList.add("after")
+      anchor.classList.remove("before")
+    })
+  }
+
   render() {
     const post = this.props.data.markdownRemark
 
@@ -122,7 +140,7 @@ class PostTemplate extends React.Component {
         >
           <ToggleMode />
         </div>
-        <StyledHTML className="post-html">
+        <StyledHTML className="post-html" isMobile={isMobile}>
           {!isAboutPage && (
             <>
               <h1 className="post-title">{post.frontmatter.title}</h1>
@@ -282,8 +300,18 @@ const StyledHTML = styled.div`
     margin: 0.5rem 0;
   }
 
+  /* .anchor-heading.before {
+    position: ${props => (props.isMobile ? "static" : "absolute")};
+    top: ${props => (props.isMobile ? "unset" : "0")};
+    left: ${props => (props.isMobile ? "unset" : "0")};
+    transform: ${props =>
+      props.isMobile ? "translateX(0)" : "translateX(-100%)"};
+    display: ${props => (props.isMobile ? "inline-block" : "initial")};
+    padding-left: ${props => (props.isMobile ? "4px" : "initial")};
+  } */
+
   @media (max-width: 500px) {
-    padding: 0.5rem;
+    padding: 0.5rem 0.7rem;
     h1 {
       font-size: 30px;
     }

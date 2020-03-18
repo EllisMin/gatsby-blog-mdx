@@ -129,6 +129,12 @@ export const GlobalStyles = createGlobalStyle`
       setThemeVars(theme.bgSubColorLight, theme.bgSubColorDark)}
   }
 
+  .img-not-gatsby-remark {
+    max-width: 100%;
+    display:block;
+    margin: 0.35rem auto !important;
+  }
+
 
   .main-card-name {
     h2 {

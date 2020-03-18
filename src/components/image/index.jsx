@@ -29,7 +29,9 @@ const Image = () => {
     return null
   }
 
-  return <Img fluid={image.node.childImageSharp.fluid} />
+  return (
+    <Img className="img-profile" fluid={image.node.childImageSharp.fluid} />
+  )
 }
 
 export default Image

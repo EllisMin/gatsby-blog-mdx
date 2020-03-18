@@ -91,13 +91,22 @@ class PostTemplate extends React.Component {
   }
 
   zoomImages = () => {
-    const target = "img.gatsby-resp-image-image"
-
-    const images = Array.from(document.querySelectorAll(target)).map(
-      element => {
-        return element
+    const targetImg = "img"
+    const targetGatsbyImg = "gatsby-resp-image-image"
+    const images = Array.from(document.querySelectorAll(targetImg))
+    const filteredImages = []
+    for (let i = 0; i < images.length; i++) {
+      const img = images[i]
+      // Filter profile image
+      const isProfile = document.querySelector(".img-profile").contains(img)
+      if (!isProfile) {
+        // Set maximum width/height to non-gatsby images
+        if (!img.classList.contains(targetGatsbyImg)) {
+          img.classList.add("img-not-gatsby-remark")
+        }
+        filteredImages.push(img)
       }
-    )
+    }
 
     let mediumZoomBgColor = ""
     const savedTheme = JSON.parse(storage.getItem("theme")) || "light"
@@ -105,7 +114,7 @@ class PostTemplate extends React.Component {
       savedTheme.mode === "light" ? theme.bgSubColorLight : theme.bgSubColorDark
 
     // Apply medium zoom to images
-    mediumZoom(images, {
+    mediumZoom(filteredImages, {
       margin: 24,
       background: mediumZoomBgColor,
     })
@@ -128,7 +137,6 @@ class PostTemplate extends React.Component {
 
   render() {
     const post = this.props.data.markdownRemark
-
     const isAboutPage = post.fields.slug.includes("/about")
 
     return (

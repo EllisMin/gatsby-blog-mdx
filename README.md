@@ -100,6 +100,28 @@ A ready-to-use, customizable personal blog with minimalistic design
 
     ### Learn [how to deploy your blog online](https://gatsby-minimalistic-dmin.netlify.com/2020/03/deploy)
 
+## What's inside? 🔍
+```
+.
+├── _assets            # Contains profile image & favicon
+├── _posts             # All of your posts goes in here as well as any other files
+├── src                # All the front-end source code
+├── dmin-config.js     # ----> Modify this to customize your blog
+├── ...
+├── .gitignore         # Contains file names that won't be pushed to git repository
+├── .prettierrc        # Helps formatting your code
+├── gatsby-browser.js  # Contains gatsby browser APIs / extension of default gatsby settings
+├── gatsby-config.js   # Contains site meta data & gatsby plugins
+├── gatsby-node.js     # Contains gatsby node APIs--it's where post pages & slugs are created
+├── gatsby-ssr.js      # Contains gatsby server-side rendering APIs
+├── LICENSE            # Contains MIT License
+├── package-lock.json  # Contains versions of npm dependencies used for this project
+├── package.json       # Node.js manifest file that contains project's meta data
+└── README.md          # Markdown file that describes the project
+```
+
+
+
 ## Issues
 
 [Issues](https://github.com/EllisMin/gatsby-minimalistic-dmin/issues)

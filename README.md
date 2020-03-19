@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/EllisMin/gatsby-minimalistic-dmin-netlify">
+  <a href="https://github.com/EllisMin/gatsby-minimalistic-dmin">
     <img alt="icon" src="_assets/icon-code.png" width="60" />
   </a>
 </p>

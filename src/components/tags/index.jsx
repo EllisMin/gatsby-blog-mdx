@@ -1,7 +1,9 @@
 import React from "react"
 import Tag from "./tag"
 import { isMobile } from "react-device-detect"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faHandPointer } from "@fortawesome/free-solid-svg-icons"
 
 class Tags extends React.Component {
   constructor(props) {
@@ -10,6 +12,7 @@ class Tags extends React.Component {
     this.state = {
       sticky: undefined,
       topPos: undefined,
+      showSwipeIcon: false,
     }
   }
 
@@ -20,6 +23,13 @@ class Tags extends React.Component {
         topPos:
           this.tagRef.current.getBoundingClientRect().y + window.pageYOffset,
       })
+      const width = this.tagRef.current.clientWidth
+      const scrollWidth = this.tagRef.current.querySelector(".tag-list-inner")
+        .scrollWidth
+      if (scrollWidth > width && !window.sessionStorage.getItem("swiped_")) {
+        this.setState({ showSwipeIcon: true })
+        window.sessionStorage.setItem("swiped_", true)
+      }
 
       window.addEventListener("scroll", this.detectSticky)
     }
@@ -54,6 +64,9 @@ class Tags extends React.Component {
     const { tags, selectTag, selectedTag } = this.props
     const childrenElement = (
       <div className="tag-list">
+        {isMobile && this.state.showSwipeIcon && (
+          <StyledFA className="icon-hand-ptr" icon={faHandPointer} />
+        )}
         {/* Used to apply overflow to work with sticky */}
         <div className="tag-list-inner">
           <Tag title={"all"} selectTag={selectTag} selectedTag={selectedTag} />
@@ -123,6 +136,7 @@ const StyledTagsHorizontal = styled.div`
   translate: transform 500ms ease-in;
 
   .tag-list {
+    position: relative;
     width: 100%;
     &-inner {
       display: flex;
@@ -137,4 +151,26 @@ const StyledTagsHorizontal = styled.div`
       }
     }
   }
+`
+const swipeLeft = keyframes`
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    right: 50px;
+    bottom: 5px;
+  }
+  100% {
+    opacity: 0;
+    right: 50px;
+    bottom: 5px;
+  }
+`
+
+const StyledFA = styled(FontAwesomeIcon)`
+  position: absolute;
+  bottom: 6px;
+  right: 0;
+  animation: ${swipeLeft} 2000ms forwards 1500ms ease-in;
 `

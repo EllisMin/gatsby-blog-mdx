@@ -242,6 +242,10 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .icon-hand-ptr {
+    color: ${() => setThemeVars("#111", "#fff")}
+  }
+  
   table {
     display: block;
     font-family: sans-serif;

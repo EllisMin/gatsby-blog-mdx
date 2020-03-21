@@ -39,6 +39,7 @@ const config = {
   ========================================= */
   defaultTheme: "light",                      // Options: dark / light -- applied to first visitors
   showTimeToRead: false,                      // Shows time to read for each post in main page
+  breakCodeLines: false,                      // Breaks long code lines instead of horizontal scroll
   useLightCodeBlock: true,                    // Use lighter code block when theme is set to "light"
   faviconSrc: `_assets/icon-code.png`,        // Favicon
   gaTrackingId: ``,                           // Your google analytics tracking id--i.e. UA-*****

@@ -292,6 +292,7 @@ let codeBlockStyles = createGlobalStyle`
     code[class*="language-"],
     pre[class*="language-"] {
       font-family: ${config.fontCodeBlocks + config.fontsBackUp};
+      white-space: ${config.breakCodeLines ? "pre-wrap" : "pre"}
     }
 
     /* Inline code block */
@@ -323,6 +324,7 @@ if (config.useLightCodeBlock) {
     pre[class*="language-"] {
       font-family: ${config.fontCodeBlocks + config.fontsBackUp};
       color: ${base0};
+      white-space: ${config.breakCodeLines ? "pre-wrap" : "pre"}
     }
     .token.class-name {
       color: ${base0};

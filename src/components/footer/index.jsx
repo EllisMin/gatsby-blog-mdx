@@ -34,5 +34,9 @@ const StyledFooter = styled.footer`
   text-align: center;
   margin-top: 1rem;
   padding: 1rem;
+  
+  @media(max-width: 500px){
+    font-size: 0.77rem;
+  }
 `
 const StyledA = styled.a``

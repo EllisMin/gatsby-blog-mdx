@@ -146,7 +146,7 @@ StyledTagsPosts = styled.div`
   flex-direction: column;
 
   .moveToBot {
-    position: fixed;
+    position: sticky;
     top: 0;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
@@ -158,7 +158,7 @@ StyledTagsPosts = styled.div`
   }
 
   .moveToBotAnimate {
-    position: fixed;
+    position: sticky;
     top: 0;
     transition: padding 300ms ease-in;
     padding-top: 2.5rem;

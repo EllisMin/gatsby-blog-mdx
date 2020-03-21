@@ -216,17 +216,21 @@ export const GlobalStyles = createGlobalStyle`
       box-shadow: 0px 0px 7px -5px ${() =>
         setThemeVars("#000000bf", "#000000bf")};
 
-      background: ${() => setThemeVars("#f4f4f4", theme.darkerColor)};
-      border-left: 2px solid ${() => setThemeVars("#bbb", "#444")};
-      border-right: 2px solid ${() => setThemeVars("#bbb", "#444")};
+      background: ${() => setThemeVars("#f5f5f5", "#232227")};
+      border-left: 3px solid ${() => setThemeVars("#bbb", "#444")};
+      border-right: 3px solid ${() => setThemeVars("#bbb", "#444")};
+      border-top: 1px solid ${() => setThemeVars("#eee", "#333")};
+      border-bottom: 1px solid ${() => setThemeVars("#eee", "#333")};
+      color: ${() => setThemeVars("#888", "#eee")}
     }
   }
   
 
   .tag {
     &-horizontal {  
+      background: ${() => setThemeVars("#fff", "#3a3d56")};
       &:hover{
-        background: ${() => setThemeVars(theme.bgColorLight, "#1a1a1a")};
+        background: ${() => setThemeVars("#fff !important", "#3a3d56 !important")};
       }
     }
 

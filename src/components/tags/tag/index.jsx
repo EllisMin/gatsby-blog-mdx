@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../../shared/styles-global"
-import { setThemeVars } from "../../../util/theme-helper"
 import { isMobile } from "react-device-detect"
 
 const Tag = ({ title, selectTag, selectedTag, unmountTagsAnimation }) => {
@@ -47,14 +46,12 @@ const StyledTagVertical = styled.div`
 const StyledTagHorizontal = styled.div`
   position: relative;
   cursor: pointer;
-  padding: 0.3rem 0.5rem;
-  margin: 0 0.4rem;
-  background: ${() => setThemeVars(theme.primaryColor, theme.bgColorDark)};
-  border-radius: 5px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${props =>
-    props.selected ? setThemeVars("#aaa", "#666") : "transparent"};
+  padding: 0.5rem 0.9rem;
+  margin: 0 0.3rem;
+  font-size: 0.9rem;
+  background: ${props => !props.selected && "none !important"};
+  border-radius: 15px;
   font-weight: ${props => (props.selected ? "bold" : "400")};
   white-space: nowrap;
+  transition: none;
 `

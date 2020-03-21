@@ -146,18 +146,29 @@ StyledTagsPosts = styled.div`
   flex-direction: column;
 
   .moveToBot {
-    position: sticky;
+    position: fixed;
     top: 0;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    .tag-list {
+      .tag-horizontal {
+        font-size: 0.85rem;
+      }
+    }
   }
 
   .moveToBotAnimate {
-    position: sticky;
+    position: fixed;
     top: 0;
-    transition: padding 300ms linear;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
+    transition: padding 300ms ease-in;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    .tag-list {
+      .tag-horizontal {
+        transition: font-size 300ms ease-in;
+        font-size: 0.85rem;
+      }
+    }
   }
 `
 if (!isMobile) {

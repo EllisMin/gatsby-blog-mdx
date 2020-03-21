@@ -117,11 +117,10 @@ const StyledTagsHorizontal = styled.div`
   z-index: 1;
   display: flex;
   align-items: center;
-  padding: 1.8rem 0.2rem;
+  padding: 1.5rem 0.2rem;
   width: 100%;
   height: 46px;
   translate: transform 500ms ease-in;
-  margin: 1rem 0;
 
   .tag-list {
     width: 100%;

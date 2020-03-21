@@ -22,13 +22,18 @@ class Tags extends React.Component {
         sticky: this.tagRef.current,
         topPos:
           this.tagRef.current.getBoundingClientRect().y + window.pageYOffset,
+        horizontalScroll: this.tagRef.current.querySelector(".tag-list-inner"),
       })
       const width = this.tagRef.current.clientWidth
-      const scrollWidth = this.tagRef.current.querySelector(".tag-list-inner")
-        .scrollWidth
-      if (scrollWidth > width && !window.sessionStorage.getItem("swiped_")) {
+      const scroll = this.tagRef.current.querySelector(".tag-list-inner")
+      const scrollWidth = scroll.scrollWidth
+      // Scroll to saved position
+      const scrollPos = sessionStorage.getItem("scrollX_") || 0
+      scroll.scrollLeft = scrollPos
+      // Display swipe icon
+      if (scrollWidth > width && !sessionStorage.getItem("swiped_")) {
         this.setState({ showSwipeIcon: true })
-        window.sessionStorage.setItem("swiped_", true)
+        sessionStorage.setItem("swiped_", true)
       }
 
       window.addEventListener("scroll", this.detectSticky)
@@ -60,10 +65,21 @@ class Tags extends React.Component {
     sticky.classList.remove("moveToBotAnimate")
   }
 
+  handleScrollX = () => {
+    if (this.state.sticky && this.state.horizontalScroll) {
+      const width = this.state.sticky.clientWidth
+      const scrollWidth = this.state.horizontalScroll.scrollWidth
+      if (scrollWidth > width) {
+        const scrolledPos = this.state.horizontalScroll.scrollLeft
+        sessionStorage.setItem("scrollX_", scrolledPos)
+      }
+    }
+  }
+
   render() {
     const { tags, selectTag, selectedTag } = this.props
     const childrenElement = (
-      <div className="tag-list">
+      <div className="tag-list" onScroll={this.handleScrollX}>
         {isMobile && this.state.showSwipeIcon && (
           <StyledFA className="icon-hand-ptr" icon={faHandPointer} />
         )}

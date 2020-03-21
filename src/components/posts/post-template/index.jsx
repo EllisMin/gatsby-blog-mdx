@@ -282,6 +282,14 @@ const StyledHTML = styled.div`
     > p {
       margin-top: 0.5rem;
     }
+    
+    > blockquote {
+      border-left: none;
+      font-size: 1.2rem;
+      > blockquote {
+        font-size: 1.3rem;
+      }
+    }
   }
 
   a {

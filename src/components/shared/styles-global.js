@@ -245,6 +245,13 @@ export const GlobalStyles = createGlobalStyle`
   .icon-hand-ptr {
     color: ${() => setThemeVars("#111", "#fff")}
   }
+
+  .medium-zoom-overlay {
+    z-index: 4;
+  }
+  .medium-zoom-image--opened {
+    z-index: 5;
+  }
   
   table {
     display: block;

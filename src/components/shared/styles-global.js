@@ -297,11 +297,11 @@ const base2 = () => setThemeVars("#a93232", "#63fa83")
 const base3 = () => setThemeVars("#666a4e", "#f5ff98")
 const base4 = () => setThemeVars("#112b63", "#6ad7f9")
 const base5 = () => setThemeVars("#5b581a", "#d2ceab")
-const base6 = () => setThemeVars("#10431b", "#e48080")
+const base6 = () => setThemeVars("#327b41", "#e48080")
 const base99 = () => setThemeVars("#248537", "#63fa83") // Token inserted
 const base98 = () => setThemeVars("#8e3232", "#e48080") // Token deleted
 const inline = () => setThemeVars("#eee", "#464457")
-const highlight = () => setThemeVars("#ccc", "#374666")
+const highlight = () => setThemeVars("#dedede", "#374666")
 
 let codeBlockStyles = createGlobalStyle`
     code[class*="language-"],

@@ -162,6 +162,52 @@ $base6: #e48080;
     content: "R";
     background: #b34a4a;
   }
+  
+  // xml
+  pre.language-xml::before {
+    content: "XML";
+    background: #916720;
+  }
+
+  // svg
+  pre.language-svg::before {
+    content: "SVG";
+  }
+
+  // markup
+  pre.language-markup::before {
+    content: "MARKUP";
+  }
+
+  // mathml
+  pre.language-mathml::before {
+    content: "MATHML";
+  }
+
+  // scss
+  pre.language-scss::before {
+    content: "SCSS";
+    background: #6c1d87;
+  }
+
+  // sass
+  pre.language-sass::before {
+    content: "SASS";
+    background: #916720;
+  }
+
+  // cpp
+  pre.language-cpp::before {
+    content: "C++";
+    background: #243994;
+  }
+
+  // git
+  pre.language-git::before {
+    content: "GIT";
+    background: #ab6a1b;
+  }
+
 }
 
 .gatsby-highlight pre[class*="language-"] {

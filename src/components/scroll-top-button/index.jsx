@@ -66,7 +66,7 @@ const StyledButton = styled.button`
   position: fixed;
   bottom: 55px;
   right: 30px;
-  z-index: 99;
+  z-index: 3;
   padding: 0 0.2rem;
   background: #9cdaba;
   opacity: 0.3;

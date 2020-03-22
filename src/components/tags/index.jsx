@@ -174,12 +174,14 @@ const swipeLeft = keyframes`
   }
   50% {
     opacity: 1;
-    right: 50px;
+    right: 40%;
+    transform: translateX(-40%);
     bottom: 5px;
   }
   100% {
     opacity: 0;
-    right: 50px;
+    right: 40%;
+    transform: translateX(-40%);
     bottom: 5px;
   }
 `
@@ -187,6 +189,7 @@ const swipeLeft = keyframes`
 const StyledFA = styled(FontAwesomeIcon)`
   position: absolute;
   bottom: 6px;
-  right: 0;
+  right: 20%;
+  transform: translateX(-20%);
   animation: ${swipeLeft} 2000ms forwards 1500ms ease-in;
 `

@@ -20,11 +20,13 @@ const Header = ({ siteTitle, showTitle }) => {
   return (
     <StyledMainHeader className="main-header">
       {/* Google AdSense */}
-      <script
-        data-ad-client={config.googleAdSenseId}
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      ></script>
+      {config.googleAdSenseId && config.googleAdSenseId !== "" && (
+        <script
+          data-ad-client={config.googleAdSenseId}
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+      )}
       <StyledMainHeaderInner className="main-header-inner">
         <h1 style={{ fontSize: "1.5rem" }}>
           {showTitle && <Link to="/">{`${siteTitle}`}</Link>}

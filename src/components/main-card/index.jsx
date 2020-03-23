@@ -176,7 +176,7 @@ if (!isMobile) {
     position: relative;
     display: grid;
     grid-template-columns: 0.25fr auto;
-    padding: 0.5rem 2rem 2rem 2rem;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
 
     @media (max-width: 500px) {
       padding: 0rem 1rem 1rem 1rem;

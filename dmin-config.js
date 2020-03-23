@@ -6,7 +6,7 @@ const config = {
   ========================================= */
   title: `minimalistic-dmin`,      // Displayed in header
   description: `This is my blog`,  // Site description
-  maxWidth: "860px",               // Max width of website
+  maxWidth: "720px",               // Max width of website
   enableAbout: true,               // Enables about page
 
   /* Profile

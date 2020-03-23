@@ -30,10 +30,17 @@ class Tags extends React.Component {
       // Scroll to saved position
       const scrollPos = sessionStorage.getItem("scrollX_") || 0
       scroll.scrollLeft = scrollPos
-      // Display swipe icon
-      if (scrollWidth > width && !sessionStorage.getItem("swiped_")) {
+      let swipedCount = parseInt(localStorage.getItem("swiped_")) || 0
+
+      // Display swipe icon animation for the first two sessions
+      if (
+        scrollWidth > width &&
+        swipedCount < 2 &&
+        !sessionStorage.getItem("swiped__")
+      ) {
         this.setState({ showSwipeIcon: true })
-        sessionStorage.setItem("swiped_", true)
+        localStorage.setItem("swiped_", swipedCount + 1)
+        sessionStorage.setItem("swiped__", true)
       }
 
       window.addEventListener("scroll", this.detectSticky)

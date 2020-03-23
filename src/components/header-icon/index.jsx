@@ -1,25 +1,15 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const HeaderIcon = ({ accountInfo, mediaName, preHref, icon }) => {
-  const [err, setErr] = useState(false)
   const accountName = accountInfo.accountName
     ? accountInfo.accountName
     : accountInfo.emailAddress
 
-  useEffect(() => {
-    if (!accountName) {
-      setErr(true)
-      console.log(
-        "HeaderIcon: accountInfo must contain either accountName or emailAddress"
-      )
-    }
-  }, [err])
-
   return (
     <>
-      {accountName && accountName && accountInfo.showHeaderIcon && !err ? (
+      {accountName && accountName && accountInfo.showHeaderIcon && (
         <a
           className="icon-fa-link"
           href={`${preHref}${accountName}`}
@@ -31,7 +21,7 @@ const HeaderIcon = ({ accountInfo, mediaName, preHref, icon }) => {
             icon={icon}
           />
         </a>
-      ) : null}
+      )}
     </>
   )
 }

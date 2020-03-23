@@ -124,11 +124,7 @@ class PostTemplate extends React.Component {
   moveAnchorHeadings = () => {
     const target = ".anchor-heading"
     const anchors = Array.from(document.querySelectorAll(target))
-    // console.log(anchors)
-
     anchors.forEach(anchor => {
-      // anchor.parentElement.appendChild(anchor)
-      // anchor.parentElement.removeChild(anchor)
       anchor.parentNode.appendChild(anchor)
       anchor.classList.add("after")
       anchor.classList.remove("before")

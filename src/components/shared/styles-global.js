@@ -12,6 +12,10 @@ const globalVar = {
   bgSubColorDark: config.bgSubColorDark,
   headerColorLight: config.headerColorLight,
   headerColorDark: config.headerColorDark,
+  fontColorLight: config.fontColorLight,
+  fontSubColorLight: config.fontSubColorLight,
+  fontColorDark: config.fontColorDark,
+  fontSubColorDark: config.fontSubColorDark,
   darkColor: "#333",
   midColor: "#444",
   darkerColor: "#313143",
@@ -46,7 +50,7 @@ const glowing = keyframes`
 `
 
 const foregroundColor = () =>
-  setThemeVars(theme.darkerColor, theme.primaryColor)
+  setThemeVars(theme.fontColorLight, theme.fontColorDark)
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -111,7 +115,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .profile-texts {
     h4, p, p > a {
-      color: ${() => setThemeVars(theme.subColor, "#dbdbdb")};
+      color: ${() => setThemeVars(theme.fontSubColorLight, theme.fontSubColorDark)};
     }
   }
 
@@ -243,6 +247,10 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .custom-hr {
+    border-top-color: ${() => setThemeVars("#ccc", "#555")};
+  }
+
   .icon-hand-ptr {
     color: ${() => setThemeVars("#555", "#eee")}
   }
@@ -292,7 +300,7 @@ export const GlobalStyles = createGlobalStyle`
 // Code block stylings based on main theme
 const bgColor = () => setThemeVars("#eee", "#2d323e")
 const bgColorBorder = () => setThemeVars("#ddd", "#51566d")
-const base0 = () => setThemeVars("#111", "#fafafa")
+const base0 = () => setThemeVars("#111", "#ddd")
 const base1 = () => setThemeVars("#352983", "#fa69e5")
 const base2 = () => setThemeVars("#a93232", "#63fa83")
 const base3 = () => setThemeVars("#666a4e", "#f5ff98")
@@ -302,7 +310,7 @@ const base6 = () => setThemeVars("#327b41", "#e48080")
 const base99 = () => setThemeVars("#248537", "#63fa83") // Token inserted
 const base98 = () => setThemeVars("#8e3232", "#e48080") // Token deleted
 const inline = () => setThemeVars("#eee", "#464457")
-const highlight = () => setThemeVars("#dedede", "#374666")
+const highlight = () => setThemeVars("#dedede", "#353e50")
 
 let codeBlockStyles = createGlobalStyle`
     code[class*="language-"],

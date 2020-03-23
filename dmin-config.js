@@ -49,16 +49,19 @@ const config = {
   /* Styles--use hex value. i.e. visit https://www.color-hex.com/
   ========================================= */
   headerColorLight: "#eee",
-  headerColorDark: "#222",
+  headerColorDark: "#232323",
   bgColorLight: "#f7f7f7",
   bgColorDark: "#26272e",
-  
   /* background colors surrounding profile & posts in main page */
   bgSubColorLight: "#fff",
   bgSubColorDark: "#292a30",
-
-  /* Fonts
-  ========================================= */
+  
+  /* Font Colors */
+  fontColorLight: "#313131",
+  fontSubColorLight: "#808080",
+  fontColorDark: "#a9a9af",
+  fontSubColorDark: "#706e77",
+  /* Fonts */
   fontMain: `"Roboto"`,                       // Main Font
   fontPosts: `"Open Sans"`,                   // Font inside posts
   fontProfile: `'Oxanium'`,                   // Font inside profile & title in header

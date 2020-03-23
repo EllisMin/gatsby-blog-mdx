@@ -49,6 +49,6 @@ const StyledPostCard = styled.div`
   }
   p {
     margin-top: 0.3rem;
-    color: ${() => setThemeVars(theme.subColor, theme.midGreyColor)};
+    color: ${() => setThemeVars(theme.fontSubColorLight, theme.fontSubColorDark)};
   }
 `

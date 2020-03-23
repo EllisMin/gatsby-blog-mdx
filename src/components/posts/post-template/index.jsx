@@ -154,7 +154,7 @@ class PostTemplate extends React.Component {
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
-                  marginBottom: "1.5rem",
+                  marginBottom: "1rem",
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center" }}>
@@ -178,7 +178,7 @@ class PostTemplate extends React.Component {
                 </div>
                 <p style={{ fontStyle: "italic" }}>{post.frontmatter.date}</p>
               </div>
-              <hr style={{ marginBottom: "1rem" }} />
+              <Hr />
             </>
           )}
           {/* HTML markup inside */}
@@ -187,7 +187,7 @@ class PostTemplate extends React.Component {
 
         {!isAboutPage && (
           <>
-            <Hr />
+            <Hr widthInPercent="97" verticalMargin="0.8rem" />
             <Profile />
             <StyledSharedBtnContainer>
               {config.shareButtons.email && (
@@ -216,7 +216,7 @@ class PostTemplate extends React.Component {
                 </LinkedinShareButton>
               )}
             </StyledSharedBtnContainer>
-            <Hr />
+            <Hr widthInPercent="97" verticalMargin="0.8rem" />
             <FacebookComments
               location={this.state.location}
               reload={this.registerFacebookComments}

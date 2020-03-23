@@ -60,7 +60,7 @@ const config = {
   fontColorLight: "#313131",
   fontSubColorLight: "#808080",
   fontColorDark: "#a9a9af",
-  fontSubColorDark: "#706e77",
+  fontSubColorDark: "#818086",
   /* Fonts */
   fontMain: `"Roboto"`,                       // Main Font
   fontPosts: `"Open Sans"`,                   // Font inside posts

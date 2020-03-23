@@ -85,11 +85,6 @@ export const GlobalStyles = createGlobalStyle`
     border-bottom: 1px solid ${() => setThemeVars("#dbdbdb", "#2d2d2d")};
     background: ${() =>
       setThemeVars(theme.headerColorLight, theme.headerColorDark)};
-    
-  }
-
-  .icon-github {
-    color: ${() => setThemeVars(theme.darkColor, theme.primaryColor)}
   }
 
   .sub-main {
@@ -122,6 +117,12 @@ export const GlobalStyles = createGlobalStyle`
 
   .icon-fa {
     margin: 0 0.3rem;
+    &-link {
+      opacity: 0.8;
+      :hover {
+        opacity: 1;
+      }
+    }
   }
 
   .post-bg-color {
@@ -243,7 +244,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .icon-hand-ptr {
-    color: ${() => setThemeVars("#111", "#fff")}
+    color: ${() => setThemeVars("#555", "#eee")}
   }
 
   .medium-zoom-overlay {

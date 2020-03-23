@@ -21,6 +21,7 @@ const HeaderIcon = ({ accountInfo, mediaName, preHref, icon }) => {
     <>
       {accountName && accountName && accountInfo.showHeaderIcon && !err ? (
         <a
+          className="icon-fa-link"
           href={`${preHref}${accountName}`}
           target="_blank"
           rel="noopener noreferrer"

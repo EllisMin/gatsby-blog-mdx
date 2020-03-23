@@ -181,14 +181,14 @@ const swipeLeft = keyframes`
   }
   50% {
     opacity: 1;
-    right: 40%;
-    transform: translateX(-40%);
+    right: 35%;
+    transform: translateX(-35%);
     bottom: 5px;
   }
   100% {
     opacity: 0;
-    right: 40%;
-    transform: translateX(-40%);
+    right: 35%;
+    transform: translateX(-35%);
     bottom: 5px;
   }
 `

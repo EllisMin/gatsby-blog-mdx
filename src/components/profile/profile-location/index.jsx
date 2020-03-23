@@ -12,7 +12,7 @@ const ProfileLocation = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FontAwesomeIcon className="icon-fa" icon={faMapMarkerAlt} />
+        <FontAwesomeIcon className="icon-fa icon-location" icon={faMapMarkerAlt} />
         {location}
       </a>
     </StyledTextsLocation>
@@ -24,7 +24,7 @@ export default ProfileLocation
 const StyledTextsLocation = styled.p`
   font-size: 0.85rem;
   margin: 0.3rem !important;
-  .icon-fa {
+  .icon-location {
       font-size: 0.8rem;
   }
 `

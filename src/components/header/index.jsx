@@ -116,7 +116,6 @@ const StyledMediaIcons = styled.div`
   display: flex;
   justify-content: flex-end;
   * {
-    margin: 0 0.2rem;
     font-size: 1.7rem;
   }
 

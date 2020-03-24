@@ -316,6 +316,9 @@ const StyledHTML = styled.div`
     padding: 0.5rem 0.7rem;
     h1 {
       font-size: 30px;
+      &.post-title {
+        font-size: 26px;
+      }
     }
   }
 `

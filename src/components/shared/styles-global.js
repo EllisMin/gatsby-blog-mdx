@@ -221,7 +221,7 @@ export const GlobalStyles = createGlobalStyle`
       box-shadow: 0px 0px 7px -5px ${() =>
         setThemeVars("#000000bf", "#000000bf")};
 
-      background: ${() => setThemeVars("#f5f5f5", "#232227")};
+      background: ${() => setThemeVars("#f5f5f5", theme.headerColorDark)};
       border-left: 3px solid ${() => setThemeVars("#bbb", "#444")};
       border-right: 3px solid ${() => setThemeVars("#bbb", "#444")};
       border-top: 1px solid ${() => setThemeVars("#eee", "#333")};

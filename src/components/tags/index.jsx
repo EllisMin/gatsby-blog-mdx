@@ -124,7 +124,6 @@ export default Tags
 const StyledTagsVertical = styled.div`
   margin-top: 0.5rem;
   background: none !important;
-  border-left: none;
   .tag-list {
     position: sticky;
     top: 50px;

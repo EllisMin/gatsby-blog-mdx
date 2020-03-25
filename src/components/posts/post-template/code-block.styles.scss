@@ -11,7 +11,7 @@ $base6: #e48080;
   background-color: #374666; // Code highlight color
   display: block;
   margin-left: -1em;
-  padding-left: 0.75em;
+  padding-left: 0.5em;
   border-left: 6px solid #df6b6b;
 }
 
@@ -300,6 +300,7 @@ pre[class*="language-"] {
   border-radius: 2px;
   background: #555c6f;
   white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .token.comment,
@@ -389,5 +390,6 @@ pre[class*="language-"] {
   // Decrease border width for highlighted code lines
   .gatsby-highlight-code-line {
     border-left-width: 2px;
+    padding-left: 0.45rem;
   }
 }

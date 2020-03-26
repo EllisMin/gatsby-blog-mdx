@@ -226,7 +226,7 @@ export const GlobalStyles = createGlobalStyle`
       border-right: 3px solid ${() => setThemeVars("#bbb", "#444")};
       border-top: 1px solid ${() => setThemeVars("#eee", "#333")};
       border-bottom: 1px solid ${() => setThemeVars("#eee", "#333")};
-      color: ${() => setThemeVars("#888", "#eee")}
+      color: ${() => setThemeVars("#888", "#c9c9c9")}
     }
   }
   

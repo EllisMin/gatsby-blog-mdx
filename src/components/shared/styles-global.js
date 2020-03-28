@@ -199,7 +199,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .post-html {
     blockquote {
-      color: ${() => setThemeVars(theme.subColor, theme.midGreyColor)};
+      color: ${() => setThemeVars(theme.fontSubColorLight, theme.fontSubColorDark)};
       border-left: 3px solid ${() =>
         setThemeVars(theme.midGreyColor, theme.midColor)};
     }

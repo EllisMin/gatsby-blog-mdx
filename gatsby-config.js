@@ -67,7 +67,7 @@ module.exports = {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
             },
           },
-          // Emoji list: https://www.joypixels.com/emoji
+          // Emoji list: https://emojipedia.org/joypixels/
           {
             resolve: `gatsby-transformer-remark`,
             options: {

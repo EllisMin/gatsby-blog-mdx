@@ -32,6 +32,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
+    `gatsby-remark-emoji`, // Emoji list: https://emojipedia.org/joypixels/
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -65,13 +66,6 @@ module.exports = {
             options: {
               destinationDir: `${__dirname}/_posts`,
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
-            },
-          },
-          // Emoji list: https://emojipedia.org/joypixels/
-          {
-            resolve: `gatsby-transformer-remark`,
-            options: {
-              plugins: [`gatsby-remark-emoji`],
             },
           },
         ],

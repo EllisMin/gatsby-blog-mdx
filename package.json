@@ -22,6 +22,7 @@
     "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-remark-autolink-headers": "^2.1.24",
     "gatsby-remark-copy-linked-files": "^2.1.40",
+    "gatsby-remark-emoji": "0.0.3",
     "gatsby-remark-images": "^3.1.44",
     "gatsby-remark-prismjs": "^3.3.32",
     "gatsby-source-filesystem": "^2.1.48",

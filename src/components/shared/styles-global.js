@@ -115,7 +115,8 @@ export const GlobalStyles = createGlobalStyle`
 
   .profile-texts {
     h4, p, p > a {
-      color: ${() => setThemeVars(theme.fontSubColorLight, theme.fontSubColorDark)};
+      color: ${() =>
+        setThemeVars(theme.fontSubColorLight, theme.fontSubColorDark)};
     }
   }
 
@@ -199,7 +200,8 @@ export const GlobalStyles = createGlobalStyle`
 
   .post-html {
     blockquote {
-      color: ${() => setThemeVars(theme.fontSubColorLight, theme.fontSubColorDark)};
+      color: ${() =>
+        setThemeVars(theme.fontSubColorLight, theme.fontSubColorDark)};
       border-left: 3px solid ${() =>
         setThemeVars(theme.midGreyColor, theme.midColor)};
     }
@@ -311,6 +313,7 @@ const base99 = () => setThemeVars("#248537", "#63fa83") // Token inserted
 const base98 = () => setThemeVars("#8e3232", "#e48080") // Token deleted
 const inline = () => setThemeVars("#eee", "#464457")
 const highlight = () => setThemeVars("#dedede", "#353e50")
+const selectionColor = () => setThemeVars("#ccf1fb", "#073642")
 
 let codeBlockStyles = createGlobalStyle`
     code[class*="language-"],
@@ -320,11 +323,9 @@ let codeBlockStyles = createGlobalStyle`
     }
 
     /* Inline code block */
-    h1, h2, h3, h4, h5, h6, p, span, li, strong, em {
-      > code[class*="language-"] {
-        background: ${inline};
-        color: ${foregroundColor}
-      }
+    :not(pre) > code[class*="language-"] {
+      background: ${inline};
+      color: ${foregroundColor}
     }
 
     pre[class*="language-"]::before {
@@ -392,14 +393,27 @@ if (config.useLightCodeBlock) {
     }
 
     /* Inline code block */
-    h1, h2, h3, h4, h5, h6, p, span, li, strong, em {
-      > code[class*="language-"] {
-        background: ${inline};
-      }
+    :not(pre) > code[class*="language-"] {
+      background: ${inline};
+      color: ${foregroundColor}
     }
 
     pre[class*="language-"]::before {
       font-family: ${config.fontMain}
+    }
+
+    pre[class*="language-"]::-moz-selection,
+    pre[class*="language-"] ::-moz-selection,
+    code[class*="language-"]::-moz-selection,
+    code[class*="language-"] ::-moz-selection {
+      background: ${selectionColor};
+    }
+
+    pre[class*="language-"]::selection,
+    pre[class*="language-"] ::selection,
+    code[class*="language-"]::selection,
+    code[class*="language-"] ::selection {
+      background: ${selectionColor};
     }
   `
 }

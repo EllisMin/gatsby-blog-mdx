@@ -300,9 +300,9 @@ export const GlobalStyles = createGlobalStyle`
 `
 
 // Code block stylings based on main theme
-const bgColor = () => setThemeVars("#eee", "#2d323e")
-const bgColorBorder = () => setThemeVars("#ddd", "#51566d")
-const base0 = () => setThemeVars("#111", "#ddd")
+const bgColor = () => setThemeVars("#f7f7f7f9", "#2d323e")
+const bgColorBorder = () => setThemeVars("#e8e6ef", "#43485f")
+const base0 = () => setThemeVars("#000", "#ddd")
 const base1 = () => setThemeVars("#352983", "#fa69e5")
 const base2 = () => setThemeVars("#a93232", "#63fa83")
 const base3 = () => setThemeVars("#666a4e", "#f5ff98")
@@ -312,7 +312,7 @@ const base6 = () => setThemeVars("#327b41", "#e48080")
 const base99 = () => setThemeVars("#248537", "#63fa83") // Token inserted
 const base98 = () => setThemeVars("#8e3232", "#e48080") // Token deleted
 const inline = () => setThemeVars("#eee", "#464457")
-const highlight = () => setThemeVars("#dedede", "#353e50")
+const highlight = () => setThemeVars("#e7e8ec", "#353e50")
 const selectionColor = () => setThemeVars("#ccf1fb", "#073642")
 
 let codeBlockStyles = createGlobalStyle`
@@ -338,7 +338,7 @@ if (config.useLightCodeBlock) {
   codeBlockStyles = createGlobalStyle`
     .gatsby-highlight {
       background: ${bgColor};
-      border-left: 2px solid ${bgColorBorder};
+      border: 1px solid ${bgColorBorder};
     }
     
     .gatsby-highlight-code-line {

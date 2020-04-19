@@ -26,9 +26,9 @@ $base6: #e48080;
   padding: 0.6rem;
   padding-top: 1.2rem;
   overflow: auto;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-left: 2px solid #817182;
+  // border-top-left-radius: 3px;
+  // border-bottom-left-radius: 3px;
+  border: 1px solid #817182;
 
   // Shows the language badge for code blocks
   pre[class*="language-"]::before {

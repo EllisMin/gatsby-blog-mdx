@@ -137,7 +137,7 @@ class PostTemplate extends React.Component {
 
     return (
       <Layout showTitle={true} isPostTemplate>
-        <SEO title={post.frontmatter.title} />
+        <SEO title={post.frontmatter.title} description={post.excerpt} />
         <div
           className="switch-container"
           style={{ textAlign: "end", margin: "0 1.1rem" }}
@@ -232,6 +232,7 @@ export const postQuery = graphql`
   query BlogPostByPath($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       fields {
         slug
       }

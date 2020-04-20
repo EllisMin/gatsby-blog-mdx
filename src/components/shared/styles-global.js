@@ -311,7 +311,8 @@ const base5 = () => setThemeVars("#5b581a", "#d2ceab")
 const base6 = () => setThemeVars("#327b41", "#e48080")
 const base99 = () => setThemeVars("#248537", "#63fa83") // Token inserted
 const base98 = () => setThemeVars("#8e3232", "#e48080") // Token deleted
-const inline = () => setThemeVars("#eee", "#464457")
+const inlineBg = () => setThemeVars("#f1f1f1", "#3b3948")
+const inlineColor = () => setThemeVars("#de498d", "#ca6c9a")
 const highlight = () => setThemeVars("#e7e8ec", "#353e50")
 const selectionColor = () => setThemeVars("#ccf1fb", "#073642")
 // Copy Button Colors
@@ -328,8 +329,8 @@ let codeBlockStyles = createGlobalStyle`
 
     /* Inline code block */
     :not(pre) > code[class*="language-"] {
-      background: ${inline};
-      color: ${foregroundColor}
+      background: ${inlineBg};
+      color: ${inlineColor}
     }
 
     pre[class*="language-"]::before {
@@ -398,8 +399,8 @@ if (config.useLightCodeBlock) {
 
     /* Inline code block */
     :not(pre) > code[class*="language-"] {
-      background: ${inline};
-      color: ${foregroundColor}
+      background: ${inlineBg};
+      color: ${inlineColor};
     }
 
     pre[class*="language-"]::before {

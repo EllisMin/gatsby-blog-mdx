@@ -155,7 +155,7 @@ class PostTemplate extends React.Component {
   copyToClipboard = (id, copyBtn) => {
     const text = this.state.texts[id].content
     if (!navigator.clipboard) {
-      this.fallbackCopyToClipboard(text)
+      this.fallbackCopyToClipboard(text, copyBtn)
       return
     }
     navigator.clipboard.writeText(text).then(

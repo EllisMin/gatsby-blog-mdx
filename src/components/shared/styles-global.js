@@ -314,6 +314,10 @@ const base98 = () => setThemeVars("#8e3232", "#e48080") // Token deleted
 const inline = () => setThemeVars("#eee", "#464457")
 const highlight = () => setThemeVars("#e7e8ec", "#353e50")
 const selectionColor = () => setThemeVars("#ccf1fb", "#073642")
+// Copy Button Colors
+const copyBtnBg = () => setThemeVars("#efefef", "#3b3d46")
+const copyBtnColor = () => setThemeVars("#9c9c9c", "#888598")
+const copyBtnColorHover = () => setThemeVars("#111", "#b7b5bf")
 
 let codeBlockStyles = createGlobalStyle`
     code[class*="language-"],
@@ -414,6 +418,14 @@ if (config.useLightCodeBlock) {
     code[class*="language-"]::selection,
     code[class*="language-"] ::selection {
       background: ${selectionColor};
+    }
+
+    .btn-copy {
+      background: ${copyBtnBg};
+      color: ${copyBtnColor};
+      &:hover {
+        color: ${copyBtnColorHover}
+      }
     }
   `
 }

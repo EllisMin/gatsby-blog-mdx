@@ -33,6 +33,7 @@ class PostTemplate extends React.Component {
   state = {
     location: "",
     script: undefined,
+    texts: [],
   }
   componentDidMount() {
     this.registerFacebookComments()
@@ -41,6 +42,7 @@ class PostTemplate extends React.Component {
       this.moveAnchorHeadings()
     }
     this.zoomImages()
+    this.insertCopyBtn()
   }
 
   componentDidUpdate() {
@@ -128,6 +130,72 @@ class PostTemplate extends React.Component {
       anchor.parentNode.appendChild(anchor)
       anchor.classList.add("after")
       anchor.classList.remove("before")
+    })
+  }
+
+  fallbackCopyToClipboard = (text, copyBtn) => {
+    const textArea = document.createElement("textarea")
+    textArea.value = text
+    // Avoid scrolling to bottom
+    textArea.style.top = "0"
+    textArea.style.left = "0"
+    textArea.style.position = "fixed"
+    document.body.appendChild(textArea)
+    textArea.focus()
+    textArea.select()
+    try {
+      document.execCommand("copy")
+      copyBtn.textContent = "Copied!"
+    } catch (err) {
+      copyBtn.textContent = "Copied Failed"
+    }
+    document.body.removeChild(textArea)
+  }
+
+  copyToClipboard = (id, copyBtn) => {
+    const text = this.state.texts[id].content
+    if (!navigator.clipboard) {
+      this.fallbackCopyToClipboard(text)
+      return
+    }
+    navigator.clipboard.writeText(text).then(
+      function() {
+        copyBtn.textContent = "Copied!"
+      },
+      function(err) {
+        copyBtn.textContent = "Copy Failed"
+      }
+    )
+  }
+
+  setPrevState = (i, texts) => {
+    this.setState(prevState => {
+      return {
+        texts: [...prevState.texts, { id: i, content: texts }],
+      }
+    })
+  }
+
+  // Inserts copy button to code blocks
+  insertCopyBtn = () => {
+    const codeBlocks = document.querySelectorAll("div.gatsby-highlight")
+    const codeBlocksArr = [...codeBlocks]
+    codeBlocksArr.forEach((codeBlock, i) => {
+      let texts = ""
+      const codeElement = codeBlock.querySelector("code")
+      // Retrieve texts from code each code block
+      const nodeArr = [...codeElement.childNodes]
+      nodeArr.forEach(node => {
+        texts += node.textContent
+      })
+      this.setPrevState(i, texts)
+      // Create copy button to be attached to code blocks
+      const copyBtn = document.createElement("button")
+      copyBtn.textContent = "Copy"
+      copyBtn.setAttribute("class", "btn-copy")
+      copyBtn.onclick = () => this.copyToClipboard(i, copyBtn)
+      codeBlock.appendChild(copyBtn)
+      texts = "" // Reset texts for upcoming iteration
     })
   }
 

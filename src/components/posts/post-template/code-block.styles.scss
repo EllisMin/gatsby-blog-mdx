@@ -26,8 +26,6 @@ $base6: #e48080;
   padding: 0.6rem;
   padding-top: 1.2rem;
   overflow: auto;
-  // border-top-left-radius: 3px;
-  // border-bottom-left-radius: 3px;
   border: 1px solid #817182;
 
   // Shows the language badge for code blocks
@@ -162,7 +160,7 @@ $base6: #e48080;
     content: "R";
     background: #b34a4a;
   }
-  
+
   // xml
   pre.language-xml::before {
     content: "XML";
@@ -207,7 +205,6 @@ $base6: #e48080;
     content: "GIT";
     background: #ab6a1b;
   }
-
 }
 
 .gatsby-highlight pre[class*="language-"] {
@@ -375,6 +372,28 @@ pre[class*="language-"] {
 
 .token.entity {
   cursor: help;
+}
+
+.btn-copy {
+  cursor: pointer;
+  position: absolute;
+  top: -3px;
+  right: 0;
+  padding: 0.05rem 0.2rem 0.2rem 0.2rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #3b3d46;
+  color: #888598;
+  user-select: none;
+  font-size: 0.6rem;
+  margin: 0.2rem;
+  border: none;
+  &:hover {
+    color: #b7b5bf;
+  }
+  &:focus {
+    outline-width: 1px;
+  }
 }
 
 @media (max-width: 500px) {

@@ -233,7 +233,7 @@ class PostTemplate extends React.Component {
                           key={i}
                           style={{
                             margin: "0.5rem 0.3rem",
-                            padding: "0.2rem 0.4rem",
+                            padding: "0.15rem 0.4rem",
                             border: "1px solid #aaa",
                             borderRadius: "5px",
                             fontSize: "0.8rem",

@@ -68,7 +68,7 @@ const StyledButton = styled.button`
   right: 30px;
   z-index: 3;
   padding: 0 0.2rem;
-  background: #9cdaba;
+  background: #7d7b92;
   opacity: 0.3;
   color: #fff;
   border: none;

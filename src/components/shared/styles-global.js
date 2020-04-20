@@ -300,13 +300,13 @@ export const GlobalStyles = createGlobalStyle`
 `
 
 // Code block stylings based on main theme
-const bgColor = () => setThemeVars("#f7f7f7f9", "#2d323e")
+const bgColor = () => setThemeVars("#f6f8fa", "#2d323e")
 const bgColorBorder = () => setThemeVars("#e8e6ef", "#43485f")
 const base0 = () => setThemeVars("#000", "#ddd")
-const base1 = () => setThemeVars("#352983", "#fa69e5")
-const base2 = () => setThemeVars("#a93232", "#63fa83")
+const base1 = () => setThemeVars("#d73a49", "#fa69e5")
+const base2 = () => setThemeVars("#032f62", "#63fa83")
 const base3 = () => setThemeVars("#666a4e", "#f5ff98")
-const base4 = () => setThemeVars("#112b63", "#6ad7f9")
+const base4 = () => setThemeVars("#005cc5", "#6ad7f9")
 const base5 = () => setThemeVars("#5b581a", "#d2ceab")
 const base6 = () => setThemeVars("#327b41", "#e48080")
 const base99 = () => setThemeVars("#248537", "#63fa83") // Token inserted

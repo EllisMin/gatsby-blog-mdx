@@ -81,6 +81,12 @@ class Profile extends Component {
 export default Profile
 ```
 
+<!-- Code block with title -->
+
+```js:title=example.js
+const number 1234;
+```
+
 <!-- Bash -->
 
 ```bash{promptUser: Ellis}{outputLines: 2}

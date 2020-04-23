@@ -1,11 +1,28 @@
 $backgroundColor: #2d323e;
-$base0: #fafafa;
+$bgColorBorder: #43485f;
+$base0: #ddd;
 $base1: #fa69e5;
 $base2: #6efa83;
 $base3: #f5ff98;
 $base4: #6ad7f9;
 $base5: #d2ceab;
 $base6: #e48080;
+
+.code-title-custom {
+  padding: 0.5em 1em;
+  margin-top: 0.8rem;
+  margin-bottom: -0.8rem;
+  z-index: 0;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  background: $backgroundColor;
+  color: $base0;
+  border-top: 1px solid $bgColorBorder;
+  border-right: 1px solid $bgColorBorder;
+  border-left: 1px solid $bgColorBorder;
+  border-bottom: none;
+  font-size: 0.8rem;
+}
 
 .gatsby-highlight-code-line {
   background-color: #374666; // Code highlight color
@@ -23,6 +40,7 @@ $base6: #e48080;
   position: relative;
   background-color: $backgroundColor;
   margin: 0.8rem 0;
+  // margin: 0 0 0.8rem 0;
   padding: 0.6rem;
   padding-top: 1.2rem;
   overflow: auto;
@@ -399,7 +417,8 @@ pre[class*="language-"] {
 @media (max-width: 500px) {
   // Decrease font size
   code[class*="language-"],
-  pre[class*="language-"] {
+  pre[class*="language-"],
+  .code-title-custom {
     font-size: 0.6rem;
     .token {
       font-size: 0.6rem;

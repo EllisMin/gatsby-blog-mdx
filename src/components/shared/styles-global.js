@@ -322,7 +322,8 @@ const copyBtnColorHover = () => setThemeVars("#111", "#b7b5bf")
 
 let codeBlockStyles = createGlobalStyle`
     code[class*="language-"],
-    pre[class*="language-"] {
+    pre[class*="language-"],
+    .code-title-custom {
       font-family: ${config.fontCodeBlocks + config.fontsBackUp};
       white-space: ${config.breakCodeLines ? "pre-wrap" : "pre"}
     }
@@ -351,7 +352,8 @@ if (config.useLightCodeBlock) {
     }
 
     code[class*="language-"],
-    pre[class*="language-"] {
+    pre[class*="language-"],
+    .code-title-custom {
       font-family: ${config.fontCodeBlocks + config.fontsBackUp};
       color: ${base0};
       white-space: ${config.breakCodeLines ? "pre-wrap" : "pre"}
@@ -427,6 +429,14 @@ if (config.useLightCodeBlock) {
       &:hover {
         color: ${copyBtnColorHover}
       }
+    }
+
+    .code-title-custom {
+      background: ${bgColor};
+      border-top: 1px solid ${bgColorBorder};
+      border-right: 1px solid ${bgColorBorder};
+      border-left: 1px solid ${bgColorBorder};
+      border-bottom: none;
     }
   `
 }

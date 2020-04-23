@@ -37,6 +37,13 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          // Adding title to code blocks. Usage: ```js:title=example.js
+          {
+            resolve: "gatsby-remark-code-titles",
+            options: {
+              className: "code-title-custom",
+            },
+          },
           // Process images in markdown
           {
             resolve: `gatsby-remark-images`,

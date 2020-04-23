@@ -305,10 +305,10 @@ const bgColorBorder = () => setThemeVars("#e8e6ef", "#43485f")
 const base0 = () => setThemeVars("#000", "#ddd")
 const base1 = () => setThemeVars("#d73a49", "#fa69e5")
 const base2 = () => setThemeVars("#032f62", "#63fa83")
-const base3 = () => setThemeVars("#666a4e", "#f5ff98")
+const base3 = () => setThemeVars("#6f42c0", "#f5ff98")
 const base4 = () => setThemeVars("#005cc5", "#6ad7f9")
 const base5 = () => setThemeVars("#5b581a", "#d2ceab")
-const base6 = () => setThemeVars("#327b41", "#e48080")
+const base6 = () => setThemeVars("#22863a", "#e48080")
 const base99 = () => setThemeVars("#248537", "#63fa83") // Token inserted
 const base98 = () => setThemeVars("#8e3232", "#e48080") // Token deleted
 const inlineBg = () => setThemeVars("#f1f1f1", "#3b3948")

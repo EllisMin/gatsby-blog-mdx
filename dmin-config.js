@@ -4,10 +4,11 @@
 const config = {
   /* Site
   ========================================= */
-  title: `minimalistic-dmin`,      // Displayed in header
-  description: `This is my blog`,  // Site description
-  maxWidth: "720px",               // Max width of website
-  enableAbout: true,               // Enables about page
+  title: `minimalistic-dmin`,         // Displayed in header
+  description: `This is my blog`,     // Site description
+  maxWidth: "720px",                  // Max width of website
+  enableAbout: true,                  // Enables about page
+  siteUrl: `https://yourDomain.com/`, // Used for sitemap; improves SEO
 
   /* Profile
   ========================================= */

@@ -25,6 +25,7 @@ module.exports = {
         trackingId: config.gaTrackingId,
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-offline`,

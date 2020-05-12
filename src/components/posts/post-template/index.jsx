@@ -4,14 +4,15 @@ import styled from "styled-components"
 import mediumZoom from "medium-zoom"
 import storage from "local-storage-fallback"
 import { isMobile } from "react-device-detect"
+import config from "../../../../dmin-config"
 import Layout from "../../layout"
 import Hr from "../../hr"
 import Profile from "../../profile"
 import SEO from "../../seo"
 import FacebookComments from "../../facebook-comments"
 import ToggleMode from "../../layout/toggle-mode"
-import config from "../../../../dmin-config"
 import { theme } from "../../shared/styles-global"
+import LinkEdgePosts from "../../link-edge-posts"
 import "./code-block.styles.scss" // Code block styling
 
 import {
@@ -298,6 +299,7 @@ class PostTemplate extends React.Component {
                 </LinkedinShareButton>
               )}
             </StyledSharedBtnContainer>
+            <LinkEdgePosts pageContext={this.props.pageContext} />
             <Hr widthInPercent="97" verticalMargin="0.8rem" />
             <Profile />
             <Hr widthInPercent="97" verticalMargin="0.8rem" />

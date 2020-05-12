@@ -174,6 +174,16 @@ export const GlobalStyles = createGlobalStyle`
     display:block;
     margin: 0.35rem auto !important;
   }
+  
+  .link-edge-posts {
+    li {
+      background: ${() => setThemeVars("#fafafa", "#2f2d33")};
+
+      &:hover {
+        background: ${() => setThemeVars("#ededef", "#333138")};
+      }
+    }
+  }
 
 
   .main-card-name {

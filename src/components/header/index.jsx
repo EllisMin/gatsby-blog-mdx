@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import HeaderIcon from "../header-icon"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import {faEnvelope} from "@fortawesome/free-regular-svg-icons"
 import {
   faGithub,
   faFacebook,
@@ -122,7 +122,6 @@ const StyledMediaIcons = styled.div`
   @media (max-width: 500px) {
     * {
       margin: 0 0.15rem;
-      font-size: 1.4rem;
     }
   }
 `

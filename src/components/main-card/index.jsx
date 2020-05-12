@@ -196,7 +196,7 @@ const StyledMainCard = styled.div`
 const StyledSubMain = styled.div`
   position: relative;
   margin-top: 3rem;
-  border-radius: 20px;
+  border-radius: 10px;
 
   @media (max-width: 500px) {
     margin-top: 1rem;

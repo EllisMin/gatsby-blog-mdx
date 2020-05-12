@@ -185,9 +185,24 @@ class PostTemplate extends React.Component {
       const codeElement = codeBlock.querySelector("code")
       // Retrieve texts from code each code block
       const nodeArr = [...codeElement.childNodes]
+
       nodeArr.forEach(node => {
-        texts += node.textContent
+        // For highlighted code lines; highlighted code lines has <span>texts</span> as its children
+        if (
+          node.classList &&
+          node.classList.contains("gatsby-highlight-code-line")
+        ) {
+          node.childNodes.forEach(n => {
+            texts += n.textContent
+          })
+          texts += "\n"
+        }
+        // Non-highlighted code lines
+        else {
+          texts += node.textContent
+        }
       })
+
       this.setPrevState(i, texts)
       // Create copy button to be attached to code blocks
       const copyBtn = document.createElement("button")

@@ -84,6 +84,39 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
+  .text-lg {
+    font-size: 1.125rem;
+  }
+
+  .text-md {
+    font-size: 1rem;
+  }
+
+  .text-sm {
+    font-size: 0.875rem;
+  }
+
+  .text-xs {
+    font-size: 0.7rem;
+  }
+
+  .font-bold {
+    font-weight: bold;
+  }
+
+  .font-md {
+    font-weight: 500;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-left {
+    text-align: left;
+  }
 
   .main-header {
     border-bottom: 1px solid ${() => setThemeVars("#dbdbdb", "#2d2d2d")};

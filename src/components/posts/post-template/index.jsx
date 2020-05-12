@@ -270,9 +270,8 @@ class PostTemplate extends React.Component {
 
         {!isAboutPage && (
           <>
-            <Hr widthInPercent="97" verticalMargin="0.8rem" />
-            <Profile />
             <StyledSharedBtnContainer>
+              <h1 className="text-lg">Share This Post</h1>
               {config.shareButtons.email && (
                 <EmailShareButton url={this.state.location}>
                   <EmailIcon round size={32} />
@@ -299,6 +298,8 @@ class PostTemplate extends React.Component {
                 </LinkedinShareButton>
               )}
             </StyledSharedBtnContainer>
+            <Hr widthInPercent="97" verticalMargin="0.8rem" />
+            <Profile />
             <Hr widthInPercent="97" verticalMargin="0.8rem" />
             <FacebookComments
               location={this.state.location}
@@ -409,7 +410,9 @@ const StyledHTML = styled.div`
 
 const StyledSharedBtnContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem 0.4rem;
 
   * {
     margin: 0 0.2rem;

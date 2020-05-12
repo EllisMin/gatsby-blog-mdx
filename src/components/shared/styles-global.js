@@ -170,6 +170,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .img-not-gatsby-remark {
     max-width: 100%;
+    height: auto;
     display:block;
     margin: 0.35rem auto !important;
   }

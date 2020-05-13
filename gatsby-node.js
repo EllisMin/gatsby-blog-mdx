@@ -51,16 +51,23 @@ exports.createPages = ({ actions, graphql }) => {
     edges.forEach((edge, i) => {
       const node = edge.node
 
-      const next =
-        i === 0 || isAboutPage(edges[i - 1].node) || isDraft(edges[i - 1].node)
-          ? null
-          : edges[i - 1].node
+      let prevNode = i !== edges.length - 1 ? edges[i + 1].node : null
+      let nextNode = i !== 0 ? edges[i - 1].node : null
+
       const prev =
         i === edges.length - 1 ||
-        isAboutPage(edges[i + 1].node) ||
-        isDraft(edges[i + 1].node)
+        isAboutPage(prevNode) ||
+        isDraft(prevNode) ||
+        isDummy(prevNode)
           ? null
-          : edges[i + 1].node
+          : prevNode
+      const next =
+        i === 0 ||
+        isAboutPage(nextNode) ||
+        isDraft(nextNode) ||
+        isDummy(nextNode)
+          ? null
+          : nextNode
 
       if (node.fields.slug !== "/__do-not-remove/") {
         createPage({
@@ -83,4 +90,8 @@ const isAboutPage = node => {
 
 const isDraft = node => {
   return node.frontmatter.draft === true
+}
+
+const isDummy = node => {
+  return node.frontmatter.tags.includes("___dummy*")
 }

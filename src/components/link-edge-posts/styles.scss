@@ -2,28 +2,27 @@ ul.link-edge-posts {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   margin: 1rem 0.3rem;
 
   .link-edge-post {
-    li {
-      display: flex;
-      align-items: center;
-      padding: 1rem;
-      max-width: 300px;
-      font-size: 0.8rem;
-      border-radius: 13px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    max-width: 300px;
+    font-size: 0.8rem;
+    border-radius: 13px;
 
-      .icon-chevron {
-        margin: 0 0.5rem;
-      }
+    .icon-chevron {
+      margin: 0 0.5rem;
     }
   }
 }
 
 @media (max-width: 500px) {
   ul.link-edge-posts {
-    li {
+    .link-edge-post {
       max-width: 150px !important;
       padding: 1rem !important;
     }

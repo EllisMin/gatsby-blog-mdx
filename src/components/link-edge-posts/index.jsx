@@ -11,28 +11,28 @@ const LinkEdgePosts = ({ pageContext }) => {
   const { prev, next } = pageContext
   return prev || next ? (
     <ul className="link-edge-posts">
-      {prev && (
-        <Link to={prev.fields.slug} className="link-edge-post">
-          <li>
+      <li>
+        {prev && (
+          <Link to={prev.fields.slug} className="link-edge-post">
             <FontAwesomeIcon
               className="icon-fa icon-chevron"
               icon={faChevronLeft}
             />
             {prev.frontmatter.title}
-          </li>
-        </Link>
-      )}
-      {next && (
-        <Link to={next.fields.slug} className="link-edge-post">
-          <li>
+          </Link>
+        )}
+      </li>
+      <li>
+        {next && (
+          <Link to={next.fields.slug} className="link-edge-post">
             {next.frontmatter.title}
             <FontAwesomeIcon
               className="icon-fa icon-chevron"
               icon={faChevronRight}
             />
-          </li>
-        </Link>
-      )}
+          </Link>
+        )}
+      </li>
     </ul>
   ) : null
 }

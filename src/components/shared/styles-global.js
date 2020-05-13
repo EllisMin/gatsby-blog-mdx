@@ -294,7 +294,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .custom-hr {
-    border-top-color: ${() => setThemeVars("#ccc", "#555")};
+    border-top-color: ${() => setThemeVars("#e7e6e8", "#414044")};
   }
 
   .icon-hand-ptr {

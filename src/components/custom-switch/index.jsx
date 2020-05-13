@@ -3,6 +3,8 @@ import Switch from "react-switch"
 import { withTheme } from "styled-components"
 import config from "../../../dmin-config"
 
+import "./styles.scss"
+
 class CustomSwitch extends Component {
   constructor(props) {
     super(props)
@@ -37,29 +39,16 @@ class CustomSwitch extends Component {
           onColor="#4a4a4a"
           uncheckedIcon={
             <span
+              className="icon-moon"
               role="img"
               aria-label="switch-label"
-              style={{
-                position: "absolute",
-                top: "3px",
-                right: "3px",
-                fontSize: "0.65rem",
-              }}
+              style={{}}
             >
               🌙
             </span>
           }
           checkedIcon={
-            <span
-              role="img"
-              aria-label="switch-label"
-              style={{
-                position: "absolute",
-                top: "3px",
-                left: "3px",
-                fontSize: "0.65rem",
-              }}
-            >
+            <span className="icon-sun" role="img" aria-label="switch-label">
               ☀️
             </span>
           }

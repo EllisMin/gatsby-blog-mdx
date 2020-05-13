@@ -51,23 +51,8 @@ exports.createPages = ({ actions, graphql }) => {
     edges.forEach((edge, i) => {
       const node = edge.node
 
-      let prevNode = i !== edges.length - 1 ? edges[i + 1].node : null
-      let nextNode = i !== 0 ? edges[i - 1].node : null
-
-      const prev =
-        i === edges.length - 1 ||
-        isAboutPage(prevNode) ||
-        isDraft(prevNode) ||
-        isDummy(prevNode)
-          ? null
-          : prevNode
-      const next =
-        i === 0 ||
-        isAboutPage(nextNode) ||
-        isDraft(nextNode) ||
-        isDummy(nextNode)
-          ? null
-          : nextNode
+      const prev = getPrevAvailableNode(edges, i + 1)
+      const next = getNextAvailableNode(edges, i - 1)
 
       if (node.fields.slug !== "/__do-not-remove/") {
         createPage({
@@ -82,6 +67,36 @@ exports.createPages = ({ actions, graphql }) => {
       }
     })
   })
+}
+
+// Get next available prev node that's not about, draft, and dummy post
+const getPrevAvailableNode = (edges, index) => {
+  let retVal
+
+  for (let i = index; i < edges.length - 1; i++) {
+    if (!skipNode(edges[i].node)) {
+      retVal = edges[i].node
+      break
+    }
+  }
+  return retVal
+}
+
+const getNextAvailableNode = (edges, index) => {
+  let retVal
+
+  for (let i = index; i > 0; i--) {
+    if (!skipNode(edges[i].node)) {
+      retVal = edges[i].node
+      break
+    }
+  }
+  return retVal
+}
+
+// Skip node if it's about, draft, or dummy post
+const skipNode = node => {
+  return isAboutPage(node) || isDraft(node) || isDummy(node)
 }
 
 const isAboutPage = node => {

@@ -40,7 +40,9 @@ class CustomSwitch extends Component {
               role="img"
               aria-label="switch-label"
               style={{
-                marginLeft: "0.1rem",
+                position: "absolute",
+                top: "3px",
+                right: "3px",
                 fontSize: "0.65rem",
               }}
             >
@@ -52,7 +54,9 @@ class CustomSwitch extends Component {
               role="img"
               aria-label="switch-label"
               style={{
-                marginLeft: "0.2rem",
+                position: "absolute",
+                top: "3px",
+                left: "3px",
                 fontSize: "0.65rem",
               }}
             >

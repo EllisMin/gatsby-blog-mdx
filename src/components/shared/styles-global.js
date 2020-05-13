@@ -169,8 +169,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .img-not-gatsby-remark {
-    max-width: 100%;
-    height: auto;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    overflow: hidden;
     display:block;
     margin: 0.35rem auto !important;
   }

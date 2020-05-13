@@ -52,9 +52,13 @@ exports.createPages = ({ actions, graphql }) => {
       const node = edge.node
 
       const next =
-        i === 0 || isAboutPage(edges[i - 1].node) ? null : edges[i - 1].node
+        i === 0 || isAboutPage(edges[i - 1].node) || isDraft(edges[i - 1].node)
+          ? null
+          : edges[i - 1].node
       const prev =
-        i === edges.length - 1 || isAboutPage(edges[i + 1].node)
+        i === edges.length - 1 ||
+        isAboutPage(edges[i + 1].node) ||
+        isDraft(edges[i + 1].node)
           ? null
           : edges[i + 1].node
 
@@ -75,4 +79,8 @@ exports.createPages = ({ actions, graphql }) => {
 
 const isAboutPage = node => {
   return node.fields.slug === "/about/"
+}
+
+const isDraft = node => {
+  return node.frontmatter.draft === true
 }

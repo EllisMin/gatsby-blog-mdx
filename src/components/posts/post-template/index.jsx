@@ -272,7 +272,6 @@ class PostTemplate extends React.Component {
         {!isAboutPage && (
           <>
             <StyledSharedBtnContainer>
-              <h1 className="text-lg">Share This Post</h1>
               {config.shareButtons.email && (
                 <EmailShareButton url={this.state.location}>
                   <EmailIcon round size={32} />
@@ -406,7 +405,7 @@ const StyledHTML = styled.div`
 
 const StyledSharedBtnContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   padding: 0.2rem 0.4rem;
 

@@ -101,13 +101,16 @@ class PostTemplate extends React.Component {
     for (let i = 0; i < images.length; i++) {
       const img = images[i]
       // Filter profile image
-      const isProfile = document.querySelector(".img-profile").contains(img)
-      if (!isProfile) {
-        // Set maximum width/height to non-gatsby images
-        if (!img.classList.contains(targetGatsbyImg)) {
-          img.classList.add("img-not-gatsby-remark")
+      const profile = document.querySelector(".img-profile")
+      if (profile) {
+        const isProfile = profile.contains(img)
+        if (!isProfile) {
+          // Set maximum width/height to non-gatsby images
+          if (!img.classList.contains(targetGatsbyImg)) {
+            img.classList.add("img-not-gatsby-remark")
+          }
+          filteredImages.push(img)
         }
-        filteredImages.push(img)
       }
     }
 

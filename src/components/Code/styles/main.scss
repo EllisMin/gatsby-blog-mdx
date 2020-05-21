@@ -1,0 +1,330 @@
+@import "./lang-badges.scss";
+@import "./in-line.scss";
+
+/* Code blocks styles with prism.js */
+
+$backgroundColor: #2d323e;
+$bgColorBorder: #43485f;
+$base0: #ddd;
+$base1: #fa69e5;
+$base2: #6efa83;
+$base3: #f5ff98;
+$base4: #6ad7f9;
+$base5: #d2ceab;
+$base6: #e48080;
+
+.code-title-custom {
+  padding: 0.8rem 0.7rem;
+  margin-top: 0.8rem;
+  margin-bottom: -0.8rem;
+  z-index: 0;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  background: $backgroundColor;
+  color: $base0;
+  border-top: 1px solid $bgColorBorder;
+  border-right: 1px solid $bgColorBorder;
+  border-left: 1px solid $bgColorBorder;
+  border-bottom: none;
+  font-size: 0.8rem;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #374666; // Code highlight color
+  display: block;
+  margin-left: -0.6rem;
+  padding-left: 0.43rem;
+  border-left: 2px solid #df6b6b;
+}
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+  position: relative;
+  background-color: $backgroundColor;
+  margin: 0.8rem 0;
+  padding: 0.6rem;
+  padding-top: 0;
+  overflow: auto;
+  border: 1px solid #817182;
+}
+
+@mixin cornerText($content, $error: -1) {
+  content: $content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.875rem;
+  @if $error == 1 {
+    color: #ee5252;
+  }
+  @media(max-width: 500px){
+    font-size: 0.8rem;
+  }
+}
+
+@mixin preview {
+  position: relative;
+  padding: 0.6rem;
+  overflow: auto;
+  padding-top: 2rem;
+}
+
+// Styling for react-live code
+.live-highlight {
+  position: relative;
+  margin: 0.8rem 0;
+  padding: 0.6rem;
+  overflow: auto;
+  border-width: 1px;
+  border-style: solid;
+
+  & pre,
+  & textarea {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
+
+  & pre {
+    background-color: transparent !important;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+  }
+
+  & textarea {
+    line-height: 6px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &:before {
+    @include cornerText("Live");
+  }
+}
+
+// Live code preview styling
+.live-preview {
+  @include preview;
+  &:before {
+    @include cornerText("Result");
+  }
+}
+.live-error {
+  font-size: 0.8rem;
+  @include preview;
+  &:before {
+    @include cornerText("Error", 1);
+  }
+}
+
+.badge-btn-wrap {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+// Copy button
+.btn-copy {
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  background: transparent;
+  font-weight: 600;
+  color: #888598;
+  user-select: none;
+  margin: 0.2rem;
+  border: none;
+  transition: none;
+  &:hover {
+    color: #b7b5bf;
+  }
+  &:focus {
+    outline-width: 1px;
+  }
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  position: relative;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+}
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.5rem;
+}
+
+// Custom shell prompt
+.command-line-prompt > span:before {
+  color: #999;
+  content: " ";
+  display: block;
+  padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user="root"]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: $base0;
+  font-size: 0.8rem;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  background: transparent !important;
+
+  line-height: 1.5;
+
+  tab-size: 2;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  background: #073642;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  background: #073642;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #656565;
+}
+
+.token.punctuation {
+  color: $base5;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.tag,
+.token.boolean,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: $base6;
+}
+
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted,
+.token.number,
+.token.attr-value {
+  color: $base2;
+}
+
+.token.attr-name {
+  color: $base3;
+}
+
+.token.class-name {
+  color: $base0;
+}
+
+.token.entity {
+  color: #657b83;
+  background: #d3aa23;
+}
+
+.token.atrule,
+.token.keyword {
+  color: $base1;
+}
+
+.token.function {
+  color: $base4;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #2e94d3;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+// Preserve empty lines
+.token-line:not(:last-child) {
+  min-height: 1.185rem;
+}
+
+@media (max-width: 500px) {
+  // Decrease font size
+  code[class*="language-"],
+  pre[class*="language-"],
+  .code-title-custom {
+    font-size: 0.7rem;
+    .token {
+      font-size: 0.7rem;
+    }
+  }
+
+  .live-error {
+    font-size: 0.8rem;
+  }
+
+  // Decrease empty line height
+  .token-line:not(:last-child) {
+    min-height: 1.025rem;
+  }
+}

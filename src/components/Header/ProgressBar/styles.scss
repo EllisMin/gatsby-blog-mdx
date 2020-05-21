@@ -1,0 +1,13 @@
+$bar-width: 3px;
+
+.progress-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  height: $bar-width;
+  .progress-bar {
+    height: $bar-width;
+    width: 0%;
+  }
+}

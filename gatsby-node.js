@@ -3,7 +3,7 @@ const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     // Create slug
     const slug = createFilePath({ node, getNode, basePath: `` })
     createNodeField({
@@ -18,12 +18,12 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   const postTemplate = path.resolve(
-    "src/components/posts/post-template/index.jsx"
+    "src/components/Posts/PostTemplate/index.js"
   )
 
   return graphql(`
     {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
         edges {
           node {
             fields {
@@ -47,7 +47,7 @@ exports.createPages = ({ actions, graphql }) => {
     // console.log(JSON.stringify(res, null, 4)) ///
 
     // Create pages & register paths
-    const edges = res.data.allMarkdownRemark.edges
+    const edges = res.data.allMdx.edges
     edges.forEach((edge, i) => {
       const node = edge.node
 
@@ -108,5 +108,5 @@ const isDraft = node => {
 }
 
 const isDummy = node => {
-  return node.frontmatter.tags.includes("___dummy*")
+  return node.frontmatter.tags && node.frontmatter.tags.includes("___dummy*")
 }

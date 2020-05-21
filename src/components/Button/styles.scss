@@ -1,0 +1,12 @@
+.btn-custom {
+  cursor: pointer;
+  background: none;
+  border: none;
+  user-select: none;
+  font-size: inherit;
+
+  &:focus {
+    // outline-width: 1px;
+    outline: 0;
+  }
+}

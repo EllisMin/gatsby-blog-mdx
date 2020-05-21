@@ -1,0 +1,93 @@
+// Shows the language badge for code blocks
+.gatsby-highlight {
+  .badge-btn-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .language-badge {
+    padding: 0.1rem 0.3rem 0.15rem 0.3rem;
+    margin-top: -0.8rem;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: #675151;
+    color: #eee;
+
+    // Custom styles for particular languages
+    &-css {
+      background: #c6a22d;
+    }
+    &-cpp {
+      background: #243994;
+    }
+    &-diff {
+      background: #802121;
+    }
+    &-flow {
+      background: #5b122b;
+    }
+    &-git {
+      background: #ab6a1b;
+    }
+    &-graphql {
+      background: #ce624a;
+    }
+    &-html {
+      background: #47418c;
+    }
+    &-java {
+      background: #509750;
+    }
+    &-js,
+    &-javascript {
+      background: #c7a755;
+    }
+    &-jsx {
+      background: #627eee;
+    }
+    &-json {
+      background: #33963d;
+    }
+    &-mathml,
+    &-matlab {
+      content: "MATHML";
+    }
+    &-md {
+      background: #68216f;
+    }
+    &-mdx {
+      background: #406544;
+    }
+    &-r {
+      background: #b34a4a;
+    }
+    &-sass {
+      background: #916720;
+    }
+    &-scss {
+      background: #6c1d87;
+    }
+    &-shell {
+      background: #7e6260;
+    }
+    &-sql {
+      background: #61b2c1;
+    }
+    &-swift {
+      background: #cb782f;
+    }
+    &-ts,
+    &-typescript {
+      background: #8241b0;
+    }
+    &-tsx {
+      background: #8241b0;
+    }
+    &-xml {
+      background: #916720;
+    }
+    &-yaml {
+      background: #5c7d28;
+    }
+  }
+}

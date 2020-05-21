@@ -1,24 +1,25 @@
 import { createGlobalStyle, keyframes } from "styled-components"
-import { setThemeVars } from "../../util/theme-helper"
 import { isMobile } from "react-device-detect"
-import config from "../../../dmin-config"
+import { setThemeVars } from "../../util/theme-helper"
+import config from "../../../customize"
+import configStyles from "../../../customize-styles"
 
 const globalVar = {
   primaryColor: "#fff",
   secondaryColor: "#333",
-  bgColorLight: config.bgColorLight,
-  bgColorDark: config.bgColorDark,
-  bgSubColorLight: config.bgSubColorLight,
-  bgSubColorDark: config.bgSubColorDark,
-  headerColorLight: config.headerColorLight,
-  headerColorDark: config.headerColorDark,
-  fontColorLight: config.fontColorLight,
-  fontSubColorLight: config.fontSubColorLight,
-  fontColorDark: config.fontColorDark,
-  fontSubColorDark: config.fontSubColorDark,
+  bgColorLight: configStyles.bgColorLight,
+  bgColorDark: configStyles.bgColorDark,
+  bgSubColorLight: configStyles.bgSubColorLight,
+  bgSubColorDark: configStyles.bgSubColorDark,
+  headerColorLight: configStyles.headerColorLight,
+  headerColorDark: configStyles.headerColorDark,
+  fontColorLight: configStyles.fontColorLight,
+  fontSubColorLight: configStyles.fontSubColorLight,
+  fontColorDark: configStyles.fontColorDark,
+  fontSubColorDark: configStyles.fontSubColorDark,
   darkColor: "#333",
   midColor: "#444",
-  darkerColor: "#313143",
+  darkerColor: "#2c2c39",
   subColor: "grey",
   lightGreyColor: "#eee",
   midGreyColor: "#ccc",
@@ -52,6 +53,26 @@ const glowing = keyframes`
 const foregroundColor = () =>
   setThemeVars(theme.fontColorLight, theme.fontColorDark)
 
+const scrollBarColor = () =>
+  setThemeVars(
+    configStyles.scrollbarColorLight,
+    configStyles.scrollbarColorDark
+  )
+  
+const scrollBarBg = () =>
+  setThemeVars(configStyles.scrollbarBgLight, configStyles.scrollbarBgDark)
+const scrollBarHover = () =>
+  setThemeVars(
+    configStyles.scrollbarHoverLight,
+    configStyles.scrollbarHoverDark
+  )
+
+const underlineColor = () =>
+  setThemeVars(
+    configStyles.underlineColorLight,
+    configStyles.underlineColorDark
+  )
+
 export const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -62,9 +83,10 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     align-items: center;
-    background: ${() => setThemeVars(theme.bgColorLight, theme.bgColorDark)};
+    background: ${() =>
+      setThemeVars(theme.bgSubColorLight, theme.bgSubColorDark)};
     color: ${foregroundColor};
-    font-family: ${config.fontMain + config.fontsBackUp}
+    font-family: ${configStyles.fontMain + configStyles.fontsBackUp}
   }
 
   header,
@@ -76,6 +98,8 @@ export const GlobalStyles = createGlobalStyle`
   h2,
   h3,
   h4,
+  h5,
+  h6,
   a {
     color: ${foregroundColor};
   }
@@ -132,9 +156,7 @@ export const GlobalStyles = createGlobalStyle`
     box-shadow: 0px 0px 8px -5px ${() =>
       setThemeVars("#000000bf", "#000000bf")};
 
-    background: ${() =>
-      setThemeVars(theme.bgSubColorLight, theme.bgSubColorDark)};
-    
+    background: ${() => setThemeVars(theme.bgColorLight, theme.bgColorDark)}; 
   }
 
   .profile-home {
@@ -142,8 +164,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .profile-image-inner-inner{
-    background: ${() =>
-      setThemeVars(theme.bgSubColorLight, theme.bgSubColorDark)}
+    background: ${() => setThemeVars(theme.bgColorLight, theme.bgColorDark)}
   }
 
   .profile-texts {
@@ -164,8 +185,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .post-bg-color {
-    background: ${() =>
-      setThemeVars(theme.bgSubColorLight, theme.bgSubColorDark)}
+    background: ${() => setThemeVars(theme.bgColorLight, theme.bgColorDark)}
   }
 
   .img-not-gatsby-remark {
@@ -176,7 +196,7 @@ export const GlobalStyles = createGlobalStyle`
     display:block;
     margin: 0.35rem auto !important;
   }
-  
+
   .link-edge-posts {
     li {
       background: ${() => setThemeVars("#fafafa", "#2f2d33")};
@@ -185,6 +205,18 @@ export const GlobalStyles = createGlobalStyle`
         background: ${() => setThemeVars("#ededef", "#333138")};
       }
     }
+  }
+
+  .progress-container {
+    background: ${() =>
+      setThemeVars(theme.headerColorLight, theme.headerColorDark)};
+    .progress-bar {
+      background: ${() => setThemeVars("#8b8ed3", "#838da4")};
+    }
+  }
+
+  .custom-underline {
+    border-color: ${underlineColor}
   }
 
 
@@ -309,7 +341,37 @@ export const GlobalStyles = createGlobalStyle`
   .medium-zoom-image--opened {
     z-index: 5;
   }
-  
+
+  ${"" /* Applies to react live code */}
+  .live-highlight {
+      font-family: ${configStyles.fontCodeBlocks +
+        configStyles.fontsBackUp} !important;
+  }
+
+  ${"" /* Custom scrollbar styling for non mobile */}
+    &::-webkit-scrollbar {
+      height: ${isMobile ? "" : "13px"};
+      width: ${isMobile ? "" : "13px"};
+      border-radius: ${isMobile ? "" : "20px"};
+    }
+
+    &::-webkit-scrollbar-track {
+      background: ${scrollBarBg};
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      background: ${scrollBarColor};
+      &:hover {
+        background: ${scrollBarHover};
+      }
+      &:active {
+        background: ${scrollBarColor}
+      }
+      border: 2px solid ${scrollBarBg};
+      background-clip: padding-box;
+    }
+
   table {
     display: block;
     font-family: sans-serif;
@@ -344,159 +406,3 @@ export const GlobalStyles = createGlobalStyle`
     vertical-align: middle;
   }
 `
-
-// Code block stylings based on main theme
-const bgColor = () => setThemeVars("#f6f8fa", "#2d323e")
-const bgColorBorder = () => setThemeVars("#e8e6ef", "#43485f")
-const base0 = () => setThemeVars("#000", "#ddd")
-const base1 = () => setThemeVars("#d73a49", "#fa69e5")
-const base2 = () => setThemeVars("#032f62", "#63fa83")
-const base3 = () => setThemeVars("#6f42c0", "#f5ff98")
-const base4 = () => setThemeVars("#005cc5", "#6ad7f9")
-const base5 = () => setThemeVars("#5b581a", "#d2ceab")
-const base6 = () => setThemeVars("#22863a", "#e48080")
-const base99 = () => setThemeVars("#248537", "#63fa83") // Token inserted
-const base98 = () => setThemeVars("#8e3232", "#e48080") // Token deleted
-const inlineBg = () => setThemeVars("#f1f1f1", "#3b3948")
-const inlineColor = () => setThemeVars("#de498d", "#ca6c9a")
-const highlight = () => setThemeVars("#e7e8ec", "#353e50")
-const selectionColor = () => setThemeVars("#ccf1fb", "#073642")
-// Copy Button Colors
-const copyBtnBg = () => setThemeVars("#efefef", "#3b3d46")
-const copyBtnColor = () => setThemeVars("#9c9c9c", "#888598")
-const copyBtnColorHover = () => setThemeVars("#111", "#b7b5bf")
-
-let codeBlockStyles = createGlobalStyle`
-    code[class*="language-"],
-    pre[class*="language-"],
-    .code-title-custom {
-      font-family: ${config.fontCodeBlocks + config.fontsBackUp};
-      white-space: ${config.breakCodeLines ? "pre-wrap" : "pre"}
-    }
-
-    /* Inline code block */
-    :not(pre) > code[class*="language-"] {
-      background: ${inlineBg};
-      color: ${inlineColor}
-    }
-
-    pre[class*="language-"]::before {
-      font-family: ${config.fontMain}
-    }
-`
-
-if (config.useLightCodeBlock) {
-  // Light theme code blocks
-  codeBlockStyles = createGlobalStyle`
-    .gatsby-highlight {
-      background: ${bgColor};
-      border: 1px solid ${bgColorBorder};
-    }
-    
-    .gatsby-highlight-code-line {
-      background-color: ${highlight};
-    }
-
-    code[class*="language-"],
-    pre[class*="language-"],
-    .code-title-custom {
-      font-family: ${config.fontCodeBlocks + config.fontsBackUp};
-      color: ${base0};
-      white-space: ${config.breakCodeLines ? "pre-wrap" : "pre"}
-    }
-    .token.class-name {
-      color: ${base0};
-    }
-
-    .token.atrule,
-    .token.keyword {
-      color: ${base1};
-    }
-
-    .token.selector,
-    .token.string,
-    .token.char,
-    .token.builtin,
-    .token.url,
-    .token.number,
-    .token.attr-value {
-      color: ${base2};
-    }
-
-    .token.inserted {
-      color: ${base99};
-    }
-    .token.deleted {
-      color: ${base98};
-    }
-    .token.attr-name {
-      color: ${base3};
-    }
-    .token.function {
-      color: ${base4};
-    }
-    .token.punctuation {
-      color: ${base5};
-    }
-    .token.tag,
-    .token.boolean,
-    .token.constant,
-    .token.symbol {
-      color: ${base6};
-    }
-
-    /* Inline code block */
-    :not(pre) > code[class*="language-"] {
-      background: ${inlineBg};
-      color: ${inlineColor};
-    }
-
-    pre[class*="language-"]::before {
-      font-family: ${config.fontMain}
-    }
-
-    pre[class*="language-"]::-moz-selection,
-    pre[class*="language-"] ::-moz-selection,
-    code[class*="language-"]::-moz-selection,
-    code[class*="language-"] ::-moz-selection {
-      background: ${selectionColor};
-    }
-
-    pre[class*="language-"]::selection,
-    pre[class*="language-"] ::selection,
-    code[class*="language-"]::selection,
-    code[class*="language-"] ::selection {
-      background: ${selectionColor};
-    }
-
-    .btn-copy {
-      background: ${copyBtnBg};
-      color: ${copyBtnColor};
-      &:hover {
-        color: ${copyBtnColorHover}
-      }
-    }
-
-    .code-title-custom {
-      background: ${bgColor};
-      border-top: 1px solid ${bgColorBorder};
-      border-right: 1px solid ${bgColorBorder};
-      border-left: 1px solid ${bgColorBorder};
-      border-bottom: none;
-    }
-
-  @media (max-width: 680px) {
-    html {
-      font-size: 90%;
-    }
-  }
-
-  @media (max-width: 500px) {
-    html {
-      font-size: 83%;
-    }
-  }
-  `
-}
-
-export default codeBlockStyles

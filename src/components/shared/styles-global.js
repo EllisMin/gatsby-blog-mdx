@@ -58,7 +58,7 @@ const scrollBarColor = () =>
     configStyles.scrollbarColorLight,
     configStyles.scrollbarColorDark
   )
-  
+
 const scrollBarBg = () =>
   setThemeVars(configStyles.scrollbarBgLight, configStyles.scrollbarBgDark)
 const scrollBarHover = () =>
@@ -211,7 +211,11 @@ export const GlobalStyles = createGlobalStyle`
     background: ${() =>
       setThemeVars(theme.headerColorLight, theme.headerColorDark)};
     .progress-bar {
-      background: ${() => setThemeVars("#8b8ed3", "#838da4")};
+      background: ${() =>
+        setThemeVars(
+          configStyles.progressBarColorLight,
+          configStyles.progressBarColorLight
+        )};
     }
   }
 

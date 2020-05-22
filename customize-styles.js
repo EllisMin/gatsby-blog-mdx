@@ -47,6 +47,10 @@ const styleConfig = {
   underlineColorLight: "#8807ff",
   underlineColorDark: "#f2c033",
 
+  /* Scroll Progress Bar Color */
+  progressBarColorLight: "#8b8ed3",
+  progressBarColorDark: "#838da4",
+
   /* To customize code blocks, modify /src/components/Code/styles/* */
 }
 

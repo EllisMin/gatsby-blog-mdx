@@ -7,7 +7,7 @@ import mediumZoom from "medium-zoom"
 import storage from "local-storage-fallback"
 import { isMobile } from "react-device-detect"
 import { setThemeVars } from "../../../util/theme-helper"
-import config, { comments } from "../../../../customize"
+import { comments } from "../../../../customize"
 import configStyles from "../../../../customize-styles"
 import Layout from "../../Layout"
 import Hr from "../../Hr"
@@ -94,7 +94,7 @@ class PostTemplate extends React.Component {
     document.body.appendChild(script)
     window.fbAsyncInit = function() {
       window.FB.init({
-        appId: config.fbAppId,
+        appId: comments.facebook.appId,
         autoLogAppEvents: true,
         xfbml: true,
         version: "v6.0",
@@ -370,7 +370,7 @@ const StyledHTML = styled.div`
     > p {
       margin-top: 0.5rem;
     }
-    
+
     > blockquote {
       border-left: none;
       font-size: 1.2rem;
@@ -399,7 +399,10 @@ const StyledHTML = styled.div`
           height: 0.75rem;
           margin-right: 0.5rem;
           fill: ${() =>
-            setThemeVars(configStyles.fontColorLight, configStyles.fontColorDark)};
+            setThemeVars(
+              configStyles.fontColorLight,
+              configStyles.fontColorDark
+            )};
         }
       }
       span.ul-children {

@@ -40,7 +40,7 @@ const config = {
   /* Comments
   ========================================= */
   comments: {
-    facebook: { enabled: true },
+    facebook: { enabled: true, appId: "" },      // appId: optional, but used to moderate fb comments
     disqus: { enabled: false, shortName: "" },   // Check your shortName on https://disqus.com
     utterances: { enabled: false, repoUrl: "" }, // i.e. 'ellismin/gatsby-blog-mdx'
   },
@@ -53,7 +53,6 @@ const config = {
   faviconSrc: `_assets/icon-code.png`,        // Favicon
   gaTrackingId: ``,                           // Your google analytics tracking id--i.e. UA-*****
   googleAdSenseId: ``,                        // Your google AdSense client id--i.e. ca-pub-****
-  fbAppId: ``,                                // Facebook app id for moderating facebook comments
 }
 
 module.exports = config

@@ -65,19 +65,21 @@ class PostTemplate extends React.Component {
   }
 
   registerUtterancesComments = repo => {
-    console.log(theme.curTheme)
-    const script = document.createElement("script")
-    script.src = "https://utteranc.es/client.js"
-    script.async = true
-    script.crossOrigin = "anonymous"
-    script.setAttribute("repo", repo)
-    script.setAttribute("issue-term", "pathname")
-    script.setAttribute("label", "blog-comment")
-    script.setAttribute(
-      "theme",
-      `${theme.curTheme === "dark" ? "github-dark" : "github-light"}`
-    )
-    this.utterancesRef.current.appendChild(script)
+    // Register utterances if it exists
+    if (this.utterancesRef.current) {
+      const script = document.createElement("script")
+      script.src = "https://utteranc.es/client.js"
+      script.async = true
+      script.crossOrigin = "anonymous"
+      script.setAttribute("repo", repo)
+      script.setAttribute("issue-term", "pathname")
+      script.setAttribute("label", "blog-comment")
+      script.setAttribute(
+        "theme",
+        `${theme.curTheme === "dark" ? "github-dark" : "github-light"}`
+      )
+      this.utterancesRef.current.appendChild(script)
+    }
   }
 
   registerFacebookComments = () => {

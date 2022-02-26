@@ -41,7 +41,7 @@
     "node-sass": "^4.14.1",
     "parse-numeric-range": "^1.2.0",
     "prism-react-renderer": "^1.1.0",
-    "prismjs": "^1.19.0",
+    "prismjs": "^1.27.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-copy-to-clipboard": "^5.0.2",

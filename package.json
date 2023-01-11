@@ -33,7 +33,7 @@
     "gatsby-remark-emoji": "0.0.3",
     "gatsby-remark-images": "^3.1.44",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-transformer-remark": "^2.6.53",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.13",
     "local-storage-fallback": "^4.1.1",
     "mdx-utils": "^0.2.0",

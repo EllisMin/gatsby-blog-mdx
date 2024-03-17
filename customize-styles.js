@@ -1,5 +1,5 @@
 /* Customization Guide available on:
-  https://gatsby-blog-mdx.now.sh/2020/05/4-customize/
+  https://gatsby-blog-mdx-demo.pages.dev/2020/05/4-customize/
   ======================================== */
 
 // You can use color picker: https://www.color-hex.com/

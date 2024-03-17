@@ -13,7 +13,7 @@ A ready-to-use, customizable personal blog with minimalistic design
 
 ## Demo
 
-[Demo](https://gatsby-blog-mdx.now.sh/) is available here
+[Demo](https://gatsby-blog-mdx-demo.pages.dev/) is available here
 
 ## Features
 
@@ -33,7 +33,7 @@ A ready-to-use, customizable personal blog with minimalistic design
 
   - **Mdx** enables to use React components along with markdown in your post. This blog also includes some pre-built components to enhance your blog experience.
 
-  - [Learn more](https://gatsby-blog-mdx.now.sh/2020/05/md-mdx/)
+  - [Learn more](https://gatsby-blog-mdx-demo.pages.dev/2020/05/md-mdx/)
 
 - Code syntax highlighting (Light / Dark)
 
@@ -57,11 +57,11 @@ A ready-to-use, customizable personal blog with minimalistic design
 
 * Easy & Highly Customizable
 
-  - Customize everything by tweaking [customize.js](https://gatsby-blog-mdx.now.sh/2020/05/4-customize/)
+  - Customize everything by tweaking [customize.js](https://gatsby-blog-mdx-demo.pages.dev/2020/05/4-customize/)
 
 ## Get Started 🚀
 
-### More detailed guide is available on [Demo site](https://gatsby-blog-mdx.now.sh)
+### More detailed guide is available on [Demo site](https://gatsby-blog-mdx-demo.pages.dev)
 
 1.  **Download using npx | npm**
 
@@ -98,15 +98,15 @@ A ready-to-use, customizable personal blog with minimalistic design
     This is first post
     ```
 
-    ### Learn more about [creating post](https://gatsby-blog-mdx.now.sh/2020/05/3-create-post/)
+    ### Learn more about [creating post](https://gatsby-blog-mdx-demo.pages.dev/2020/05/3-create-post/)
 
 3.  **Modify `customize.js` to your needs**
 
-    ### Learn more about [customizing config](https://gatsby-blog-mdx.now.sh/2020/05/4-customize/)
+    ### Learn more about [customizing config](https://gatsby-blog-mdx-demo.pages.dev/2020/05/4-customize/)
 
 4.  **Deploy your Blog on Netlify 💫**
 
-    ### Learn [how to deploy your blog online](https://gatsby-blog-mdx.now.sh/2020/05/5-deploy/)
+    ### Learn [how to deploy your blog online](https://gatsby-blog-mdx-demo.pages.dev/2020/05/5-deploy/)
 
 
 ## What's inside? 🔍
